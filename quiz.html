@@ -449,12 +449,14 @@
                          if(radioLabel) radioLabel.classList.add('bg-green-100', 'border-green-300');
                     } else {
                         if (feedbackEl) {
-                             feedbackEl.innerHTML = `<span class="incorrect"><i class="fas fa-times mr-1"></i> <span class="lang-en">Incorrect. Correct answer is ${correctAnswer === 'true' ? 'True' : 'False'}.</span> <span class="lang-zh">錯誤。 正確答案是 ${correctAnswer === 'true' ? '是' : '否'}。</span></span>`;
+                             // MODIFIED Incorrect Answer Feedback Tone
+                             feedbackEl.innerHTML = `<span class="incorrect"><i class="fas fa-times mr-1"></i> <span class="lang-en">Not quite. The correct answer is ${correctAnswer === 'true' ? 'True' : 'False'}.</span> <span class="lang-zh">不太正確。 正確答案是 ${correctAnswer === 'true' ? '是' : '否'}。</span></span>`;
                          }
                          if(radioLabel) {
                             radioLabel.classList.add('bg-red-100', 'border-red-300');
                             const correctRadioLabel = document.querySelector(`input[name="${questionName}"][value="${correctAnswer}"]`)?.closest('.radio-label');
                             if (correctRadioLabel) {
+                                // Highlight the correct answer slightly differently
                                 correctRadioLabel.classList.add('ring-2', 'ring-offset-1', 'ring-green-500');
                             }
                          }
@@ -475,19 +477,21 @@
             let adviceZh = '';
             let resultsClasses = 'mt-12 p-6 rounded-lg shadow-md text-center ';
 
+            // MODIFIED Advice Tone based on score
             if (score === totalQuestions) {
                 adviceEn = "Excellent! You have a great understanding of the safety guidelines.";
                 adviceZh = "太棒了！您對安全守則有很好的理解。";
                 resultsClasses += 'bg-green-100 text-green-800';
             } else if (score >= 7) {
-                adviceEn = "Good job! Please review the questions you missed to ensure complete understanding.";
-                adviceZh = "做得不錯！請重新檢視您答錯的問題以確保完全理解。";
+                adviceEn = "Good job! Taking a quick look at the questions you missed will help reinforce the safety guidelines.";
+                adviceZh = "做得不錯！快速回顧一下答錯的題目，有助於加深對安全守則的理解。";
                  resultsClasses += 'bg-yellow-100 text-yellow-800';
             } else {
-                adviceEn = "Please carefully review the guidelines again, especially the areas where you made mistakes.";
-                adviceZh = "請仔細重新閱讀守則，特別是您答錯的部分。";
+                adviceEn = "It might be helpful to review the guidelines again, focusing on the areas where you weren't sure. Every point helps keep the baby safe!";
+                adviceZh = "建議您再次查閱守則，特別是您不太確定的部分，會很有幫助。每一個要點都有助於確保寶寶的安全！";
                  resultsClasses += 'bg-red-100 text-red-800';
             }
+            // END MODIFIED Advice Tone
 
             resultsDiv.className = resultsClasses;
             resultsDiv.innerHTML = `
@@ -507,7 +511,9 @@
                 </div>
             `;
              resultsDiv.style.display = 'block';
-             const resultsTop = resultsDiv.getBoundingClientRect().top + window.pageYOffset - 80;
+             // Scroll smoothly to results, accounting for header height potentially
+             const headerHeight = document.querySelector('header')?.offsetHeight || 60; // Estimate header height
+             const resultsTop = resultsDiv.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20; // Add some padding
              window.scrollTo({ top: resultsTop, behavior: 'smooth' });
         });
     </script>

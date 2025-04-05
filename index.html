@@ -24,7 +24,7 @@
             transition: max-height 0.4s ease-out;
         }
         .accordion.active .accordion-content {
-            max-height: 1500px;
+            max-height: 1500px; /* Increased max-height for potentially longer content */
             transition: max-height 0.5s ease-in;
         }
         .accordion.active .accordion-icon {
@@ -87,12 +87,12 @@
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-blue-500 to-blue-400 text-white py-12">
         <div class="container mx-auto px-4 text-center">
-             <!-- --- REPLACE [Baby's Name] --- -->
             <h2 class="text-4xl font-bold mb-4 font-heading">
-                <span class="lang-en">Keeping Baby Lucas Safe</span>
-                <span class="lang-zh block text-2xl mt-1 text-blue-100">確保Lucas寶寶名字安全</span>
+                <!-- MODIFIED HERE -->
+                <span class="lang-en">Keeping Lucas Safe</span>
+                <span class="lang-zh block text-2xl mt-1 text-blue-100">確保Lucas安全</span>
+                <!-- END MODIFICATION -->
             </h2>
-             <!-- --- END REPLACE --- -->
             <p class="text-xl mb-8 max-w-3xl mx-auto">
                 <span class="lang-en">These guidelines ensure the health and safety of our precious newborn. Please read carefully and follow all instructions.</span>
                 <span class="lang-zh text-blue-100">本文件列出了確保寶寶安全與健康的基本規則。請詳細閱讀並嚴格遵守。</span>
@@ -406,10 +406,8 @@
                              <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <!-- MODIFIED HERE -->
                                     <span class="lang-en">Wipe from front to back to prevent infections.</span>
                                     <span class="lang-zh">擦拭時，請從前往後擦拭，以防感染。</span>
-                                    <!-- END MODIFICATION -->
                                 </span>
                             </li>
                             <li class="flex items-start">
@@ -436,8 +434,10 @@
                                 <div class="bg-green-50 rounded-lg p-4">
                                      <p class="text-green-700"><i class="fas fa-prescription-bottle text-green-700 mr-2"></i>
                                         <strong><span class="lang-en">Diaper rash care:</span><span class="lang-zh">尿布疹護理：</span></strong><br>
+                                        <!-- MODIFIED HERE -->
                                         <span class="lang-en">Use zinc oxide cream for redness.</span>
                                         <span class="lang-zh">如有紅疹可使用氧化鋅藥膏。</span>
+                                        <!-- END MODIFICATION -->
                                     </p>
                                 </div>
                             </div>
@@ -496,7 +496,7 @@
                 </div>
             </div>
 
-             <!-- General Safety (Renumbered) -->
+             <!-- General Safety (Renumbered & Reworded) -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
@@ -504,8 +504,8 @@
                             <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-800 font-heading">
-                            <span class="lang-en">6. General Safety</span>
-                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">6. 一般安全規則</span>
+                            <span class="lang-en">6. General Safety Considerations</span> <!-- Title slightly softened -->
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">6. 一般安全注意事項</span> <!-- Title slightly softened -->
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
@@ -513,72 +513,78 @@
                 <div class="accordion-content">
                    <div class="px-6 pt-4 pb-6">
                         <ul class="space-y-3 text-gray-700">
+                            <!-- MODIFIED Wordings for Friendlier Tone -->
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Never leave the baby unattended on a bed, sofa, or changing table.</span>
-                                    <span class="lang-zh">請勿讓寶寶獨自躺在沙發、床上或換尿布檯上，以免跌落。</span>
+                                    <span class="lang-en">For Lucas's safety, please always keep him within sight and reach, especially on high surfaces like beds, sofas, or changing tables.</span>
+                                    <span class="lang-zh">為了Lucas的安全，請時刻看顧好他，特別是當他在床、沙發或換尿布台等較高的地方時，請確保他隨時在您的視線和伸手可及的範圍內。</span>
                                 </span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Keep small objects and plastic bags away to prevent choking.</span>
-                                    <span class="lang-zh">遠離塑膠袋、小物件，以防寶寶誤吞窒息。</span>
+                                    <span class="lang-en">Let's be mindful to keep small objects (like coins, buttons) and plastic bags safely out of Lucas's reach to prevent any choking risks.</span>
+                                    <span class="lang-zh">請一起留意將小物件（如硬幣、鈕扣）和塑膠袋等妥善收好，放在Lucas接觸不到的地方，以防任何哽噎風險。</span>
                                 </span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Avoid strong perfumes, candles, or mosquito coils – they can irritate the baby's breathing.</span>
-                                    <span class="lang-zh">避免強烈香水、蠟燭、蚊香，以防影響寶寶呼吸道。</span>
+                                    <span class="lang-en">It's best to avoid using strong perfumes, scented candles, or mosquito coils near Lucas, as his little lungs are quite sensitive to strong smells.</span>
+                                    <span class="lang-zh">最好避免在Lucas附近使用濃烈的香水、香氛蠟燭或蚊香，因為寶寶的呼吸道對強烈氣味比較敏感。</span>
                                 </span>
                             </li>
                              <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Check baby's temperature by feeling the back of their neck or chest; avoid overdressing. They should feel warm, not hot or sweaty.</span>
-                                    <span class="lang-zh">觸摸寶寶頸背或胸口檢查體溫；避免穿著過多。應感覺溫暖，而非過熱或出汗。</span>
+                                    <span class="lang-en">You can gently check if Lucas is comfortable by feeling the back of his neck or his chest. Let's aim for comfortably warm, not hot or sweaty, and avoid too many layers.</span>
+                                    <span class="lang-zh">您可以輕觸Lucas的頸背或胸口來感覺他是否穿得舒適。我們的目標是讓他感覺溫暖舒適，而不是太熱或出汗，所以請留意避免穿著過多層衣物。</span>
                                 </span>
                             </li>
                             <li class="flex items-start">
                                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                  <span>
-                                    <span class="lang-en">No smoking or alcohol near the baby.</span>
-                                    <span class="lang-zh">嚴禁在寶寶周圍吸菸或飲酒。</span>
+                                    <span class="lang-en">To keep the air clean and healthy for Lucas, please ensure the environment around him is always smoke-free and alcohol-free.</span>
+                                    <span class="lang-zh">為了給Lucas一個清新健康的環境，請確保他周圍的環境時刻保持無菸無酒。</span>
                                 </span>
                             </li>
                             <li class="flex items-start">
                                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                  <span>
-                                    <span class="lang-en">No direct sun exposure – protect the baby's skin.</span>
-                                    <span class="lang-zh">禁止寶寶直接曝曬陽光，請適當遮蔽。</span>
+                                    <span class="lang-en">Lucas's skin is very delicate, so please help protect him from direct sunlight, perhaps using shade or a light cover when outdoors.</span>
+                                    <span class="lang-zh">Lucas的皮膚非常嬌嫩，請幫忙保護他避免陽光直接照射，例如在外出時利用遮蔭處或輕薄的遮蓋物。</span>
                                 </span>
                             </li>
                              <li class="flex items-start">
                                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                  <span>
-                                    <span class="lang-en">Do not bring the baby to the balcony.</span>
-                                    <span class="lang-zh">請勿帶寶寶到陽台。</span>
+                                    <span class="lang-en">For safety reasons, please keep Lucas away from the balcony area.</span>
+                                    <span class="lang-zh">基於安全考量，請讓Lucas遠離陽台區域。</span>
                                  </span>
                              </li>
                             <li class="flex items-start">
                                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                  <span>
-                                    <span class="lang-en">Do not bring the baby close to any open window – there are no window guards and we live in a high-rise.</span>
-                                    <span class="lang-zh">請勿將寶寶靠近開著的窗戶 —— 我們住在高樓，且窗戶沒有防護裝置。</span>
+                                    <span class="lang-en">Since we're in a high-rise without window guards, please be extra careful and ensure Lucas isn't near any open windows.</span>
+                                    <span class="lang-zh">由於我們住在高樓層且窗戶沒有安裝護欄，請您格外留意，確保Lucas不會靠近任何打開的窗戶。</span>
                                  </span>
                              </li>
+                             <!-- END MODIFIED Wordings -->
                         </ul>
                         <div class="mt-6 bg-red-50 rounded-lg p-4">
                              <h4 class="font-semibold text-red-800 mb-2 font-heading">
                                 <i class="fas fa-exclamation-triangle mr-2"></i>
-                                <span class="lang-en">High-Rise Safety:</span>
-                                <span class="lang-zh">高樓安全：</span>
+                                <!-- MODIFIED Wordings for Friendlier Tone -->
+                                <span class="lang-en">High-Rise Safety Reminder:</span>
+                                <span class="lang-zh">高樓安全提醒：</span>
+                                <!-- END MODIFIED Wordings -->
                              </h4>
                              <p class="text-red-700">
-                                <span class="lang-en">Windows must remain closed when baby is in the room. Never hold baby near an open window, even if you're just looking outside.</span>
-                                <span class="lang-zh">當寶寶在房間時，窗戶必須保持關閉。切勿抱著寶寶靠近打開的窗戶，即使只是看看外面也不行。</span>
+                                <!-- MODIFIED Wordings for Friendlier Tone -->
+                                <span class="lang-en">It's safest for Lucas if windows remain closed while he's in the room. Please avoid holding him near any open window, just to be extra cautious.</span>
+                                <span class="lang-zh">為了Lucas的安全，當他在房間時，最好保持窗戶關閉。請避免抱著他靠近任何打開的窗戶，以策萬全。</span>
+                                <!-- END MODIFIED Wordings -->
                             </p>
                         </div>
                     </div>
@@ -605,10 +611,8 @@
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <!-- MODIFIED HERE -->
                                     <span class="lang-en">The baby must always be in a rear-facing car seat (Doona) when in a vehicle.</span>
                                     <span class="lang-zh">寶寶乘車時，必須使用後向式嬰兒安全座椅 (Doona)，不可抱著寶寶乘車。</span>
-                                    <!-- END MODIFICATION -->
                                 </span>
                             </li>
                             <li class="flex items-start">
@@ -690,7 +694,6 @@
                                     <span class="lang-zh">玩具需定期清潔，避免細小零件，以防誤吞。</span>
                                 </span>
                             </li>
-                            <!-- ADDED HERE -->
                             <li class="flex items-start">
                                  <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                  <span>
@@ -698,7 +701,6 @@
                                     <span class="lang-zh">18 個月前，禁止觀看電視、手機或平板電腦螢幕。</span>
                                 </span>
                             </li>
-                            <!-- END ADDITION -->
                         </ul>
                         <div class="mt-6 bg-indigo-50 rounded-lg p-4">
                             <h4 class="font-semibold text-indigo-800 mb-2 font-heading">
@@ -918,6 +920,12 @@
         document.querySelectorAll('.accordion-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const accordion = button.closest('.accordion');
+                // Optional: Close other accordions when one opens
+                // document.querySelectorAll('.accordion.active').forEach(activeAccordion => {
+                //     if (activeAccordion !== accordion) {
+                //         activeAccordion.classList.remove('active');
+                //     }
+                // });
                 accordion.classList.toggle('active');
             });
         });

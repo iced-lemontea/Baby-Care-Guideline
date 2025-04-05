@@ -1,5 +1,5 @@
 
-https://github.com/iced-lemontea/Baby-Care-Guideline
+https://iced-lemontea.github.io/Baby-Care-Guideline/
 
 ## **IMPORTANT DISCLAIMERS**
 

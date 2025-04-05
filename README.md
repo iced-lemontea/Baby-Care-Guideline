@@ -1,11 +1,5 @@
 
-## Usage
-
-1.  **Edit `index.html`:** Replace placeholder emergency contacts (Parents, Doctor) with real information.
-2.  **Open `index.html`:** Use a web browser to view the guidelines.
-3.  **Share:** Provide access to caregivers. Direct them to read the guidelines and take the quiz on `quiz.html`.
-
----
+https://github.com/iced-lemontea/Baby-Care-Guideline
 
 ## **IMPORTANT DISCLAIMERS**
 

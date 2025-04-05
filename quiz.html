@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Safety Quiz | 嬰兒安全測驗</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Basic styling for language separation */
+        .lang-zh {
+            display: block;
+            margin-top: 0.25rem;
+            color: #4A5568; /* gray-700 */
+            font-size: 0.95em;
+        }
+        .question-feedback {
+            font-size: 0.9em;
+            margin-top: 0.5rem;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        /* Style radio buttons nicely */
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            margin-right: 1rem; /* Space between T/F options */
+            padding: 0.5rem 1rem;
+            border: 1px solid #e2e8f0; /* gray-300 */
+            border-radius: 0.375rem; /* rounded-md */
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .radio-label input[type="radio"] {
+            opacity: 0; /* Hide original radio */
+            width: 0;
+            height: 0;
+        }
+        .radio-label span {
+             margin-left: 0.5rem; /* Space between pseudo-radio and text */
+        }
+
+        /* Custom radio button appearance */
+        .radio-custom {
+            display: inline-block;
+            width: 1.25em;
+            height: 1.25em;
+            border: 2px solid #4299e1; /* blue-500 */
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            position: relative;
+            transition: border-color 0.2s;
+        }
+         .radio-label input[type="radio"]:checked + .radio-custom {
+             border-color: #2b6cb0; /* blue-700 */
+         }
+        .radio-label input[type="radio"]:checked + .radio-custom::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.65em;
+            height: 0.65em;
+            background-color: #2b6cb0; /* blue-700 */
+            border-radius: 50%;
+        }
+
+         .radio-label:hover {
+             background-color: #ebf8ff; /* blue-50 */
+             border-color: #90cdf4; /* blue-300 */
+         }
+
+
+    </style>
+</head>
+<body class="bg-blue-50 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-baby text-4xl mr-4"></i>
+                    <div>
+                        <h1 class="text-3xl font-bold">
+                            <span class="lang-en">Newborn Care Safety Quiz</span>
+                            <span class="lang-zh block text-xl mt-1 text-blue-100">嬰兒照護安全測驗</span>
+                        </h1>
+                        <p class="text-blue-100">
+                            <span class="lang-en">Test your knowledge</span>
+                            <span class="lang-zh block text-sm text-blue-100">測試您的知識</span>
+                        </p>
+                    </div>
+                </div>
+                 <a href="index.html" class="text-blue-100 hover:text-white transition"><i class="fas fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Guidelines</span>
+                    <span class="lang-zh">返回守則</span>
+                 </a>
+            </div>
+        </div>
+    </header>
+
+     <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center">
+             <span class="lang-en">Baby Safety Knowledge Check</span>
+             <span class="lang-zh block text-2xl mt-1 text-blue-700">嬰兒安全知識測驗</span>
+        </h2>
+
+        <form id="quiz-form">
+            <!-- Question 1 (True) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <p class="font-bold text-lg mb-3">
+                    <span class="lang-en">Question 1</span> <span class="lang-zh">問題 1</span>
+                </p>
+                <p class="mb-4 text-gray-700">
+                    <span class="lang-en">You must always support a newborn baby's head and neck when holding them.</span>
+                    <span class="lang-zh">抱新生兒時，必須時刻托住他們的頭部和頸部。</span>
+                </p>
+                <div>
+                    <label class="radio-label">
+                        <input type="radio" name="q1" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q1" value="false">
+                         <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                <div id="feedback-q1" class="question-feedback"></div>
+            </div>
+
+            <!-- Question 2 (False) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <p class="font-bold text-lg mb-3">
+                    <span class="lang-en">Question 2</span> <span class="lang-zh">問題 2</span>
+                </p>
+                 <p class="mb-4 text-gray-700">
+                    <span class="lang-en">It is okay to give a 2-month-old baby small sips of water if they seem thirsty.</span>
+                    <span class="lang-zh">如果 2 個月大的寶寶看起來渴了，可以給他們喝少量水。</span>
+                </p>
+                <div>
+                    <label class="radio-label">
+                        <input type="radio" name="q2" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q2" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                <div id="feedback-q2" class="question-feedback"></div>
+            </div>
+
+             <!-- Question 3 (True) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                 <p class="font-bold text-lg mb-3">
+                    <span class="lang-en">Question 3</span> <span class="lang-zh">問題 3</span>
+                </p>
+                <p class="mb-4 text-gray-700">
+                    <span class="lang-en">Babies should always be placed on their back to sleep to reduce the risk of SIDS.</span>
+                    <span class="lang-zh">為降低嬰兒猝死症(SIDS)風險，應始終讓寶寶仰睡。</span>
+                 </p>
+                <div>
+                    <label class="radio-label">
+                        <input type="radio" name="q3" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q3" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                 <div id="feedback-q3" class="question-feedback"></div>
+            </div>
+
+            <!-- Question 4 (False) -->
+             <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                 <p class="font-bold text-lg mb-3">
+                    <span class="lang-en">Question 4</span> <span class="lang-zh">問題 4</span>
+                </p>
+                <p class="mb-4 text-gray-700">
+                    <span class="lang-en">It's safe to quickly grab something from another room while the baby is on the changing table, as long as you are fast.</span>
+                    <span class="lang-zh">只要速度夠快，可以在寶寶躺在換尿布台上時，快速去另一個房間拿東西。</span>
+                 </p>
+                <div>
+                     <label class="radio-label">
+                        <input type="radio" name="q4" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q4" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                 </div>
+                 <div id="feedback-q4" class="question-feedback"></div>
+            </div>
+
+             <!-- Question 5 (True) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <p class="font-bold text-lg mb-3">
+                    <span class="lang-en">Question 5</span> <span class="lang-zh">問題 5</span>
+                </p>
+                <p class="mb-4 text-gray-700">
+                    <span class="lang-en">Hands should be washed both before and after changing a baby's diaper.</span>
+                    <span class="lang-zh">換尿布前後都應該洗手。</span>
+                </p>
+                <div>
+                    <label class="radio-label">
+                        <input type="radio" name="q5" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                     <label class="radio-label">
+                        <input type="radio" name="q5" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                <div id="feedback-q5" class="question-feedback"></div>
+            </div>
+
+             <!-- Question 6 (False) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                 <p class="font-bold text-lg mb-3">
+                     <span class="lang-en">Question 6</span> <span class="lang-zh">問題 6</span>
+                 </p>
+                <p class="mb-4 text-gray-700">
+                    <span class="lang-en">Soft blankets and stuffed animals make a crib cozier and safer for a newborn.</span>
+                    <span class="lang-zh">柔軟的毯子和填充玩偶能讓嬰兒床更舒適、更安全。</span>
+                 </p>
+                <div>
+                    <label class="radio-label">
+                         <input type="radio" name="q6" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q6" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                 <div id="feedback-q6" class="question-feedback"></div>
+            </div>
+
+            <!-- Question 7 (True) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <p class="font-bold text-lg mb-3">
+                    <span class="lang-en">Question 7</span> <span class="lang-zh">問題 7</span>
+                </p>
+                <p class="mb-4 text-gray-700">
+                    <span class="lang-en">When traveling by car, a baby must always be secured in a rear-facing car seat.</span>
+                    <span class="lang-zh">乘車時，必須始終將寶寶固定在後向式汽車安全座椅中。</span>
+                </p>
+                <div>
+                    <label class="radio-label">
+                        <input type="radio" name="q7" value="true" required>
+                         <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q7" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                <div id="feedback-q7" class="question-feedback"></div>
+            </div>
+
+            <!-- Question 8 (False) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <p class="font-bold text-lg mb-3">
+                    <span class="lang-en">Question 8</span> <span class="lang-zh">問題 8</span>
+                </p>
+                 <p class="mb-4 text-gray-700">
+                    <span class="lang-en">Holding the baby near an open window in a high-rise building is safe if you have a firm grip.</span>
+                    <span class="lang-zh">只要抓緊，在高樓建築中抱著寶寶靠近打開的窗戶是安全的。</span>
+                 </p>
+                <div>
+                    <label class="radio-label">
+                        <input type="radio" name="q8" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q8" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                <div id="feedback-q8" class="question-feedback"></div>
+            </div>
+
+            <!-- Question 9 (True) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                 <p class="font-bold text-lg mb-3">
+                     <span class="lang-en">Question 9</span> <span class="lang-zh">問題 9</span>
+                 </p>
+                 <p class="mb-4 text-gray-700">
+                     <span class="lang-en">It is important to burp the baby after each feeding to help release trapped gas.</span>
+                     <span class="lang-zh">每次餵奶後幫寶寶拍嗝以幫助排出吞入的空氣是很重要的。</span>
+                </p>
+                <div>
+                    <label class="radio-label">
+                        <input type="radio" name="q9" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q9" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                 <div id="feedback-q9" class="question-feedback"></div>
+            </div>
+
+            <!-- Question 10 (False) -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <p class="font-bold text-lg mb-3">
+                    <span class="lang-en">Question 10</span> <span class="lang-zh">問題 10</span>
+                </p>
+                <p class="mb-4 text-gray-700">
+                    <span class="lang-en">Kissing the baby on the face or hands is a safe way to show affection.</span>
+                    <span class="lang-zh">親吻寶寶的臉或手是表達關愛的安全方式。</span>
+                </p>
+                <div>
+                    <label class="radio-label">
+                        <input type="radio" name="q10" value="true" required>
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">True</span><span class="lang-zh"> / 是</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="q10" value="false">
+                        <span class="radio-custom"></span>
+                        <span class="lang-en">False</span><span class="lang-zh"> / 否</span>
+                    </label>
+                </div>
+                <div id="feedback-q10" class="question-feedback"></div>
+            </div>
+
+            <!-- Submit Button -->
+             <div class="text-center mt-8">
+                <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 text-lg">
+                     <span class="lang-en">Submit Answers</span>
+                     <span class="lang-zh">提交答案</span>
+                </button>
+            </div>
+        </form>
+
+        <!-- Results Area -->
+        <div id="quiz-results" class="mt-12 p-6 bg-white rounded-lg shadow-md text-center" style="display: none;">
+            {/* Content will be added by JavaScript */}
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+     <footer class="bg-blue-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center text-blue-200">
+             <p>
+                <span class="lang-en">Remember to always prioritize the baby's safety!</span>
+                <span class="lang-zh block text-sm mt-1">請謹記時刻將寶寶的安全放在首位！</span>
+            </p>
+             <p class="mt-2">
+                <a href="index.html" class="hover:text-white underline">
+                    <span class="lang-en">Review Guidelines</span>
+                    <span class="lang-zh"> / 重新查看守則</span>
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const quizForm = document.getElementById('quiz-form');
+        const resultsDiv = document.getElementById('quiz-results');
+        const totalQuestions = 10; // Total number of questions
+
+        const correctAnswers = {
+            q1: 'true',
+            q2: 'false',
+            q3: 'true',
+            q4: 'false',
+            q5: 'true',
+            q6: 'false',
+            q7: 'true',
+            q8: 'false',
+            q9: 'true',
+            q10: 'false'
+        };
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            let score = 0;
+            const formData = new FormData(quizForm);
+
+            // Clear previous feedback
+            for (let i = 1; i <= totalQuestions; i++) {
+                const feedbackEl = document.getElementById(`feedback-q${i}`);
+                if(feedbackEl) feedbackEl.innerHTML = '';
+                 // Reset background of radio labels if needed (optional)
+                document.querySelectorAll(`input[name="q${i}"]`).forEach(radio => {
+                    radio.closest('.radio-label').classList.remove('bg-green-100', 'border-green-300', 'bg-red-100', 'border-red-300');
+                });
+            }
+
+            // Check answers
+             for (let i = 1; i <= totalQuestions; i++) {
+                const questionName = `q${i}`;
+                const selectedAnswer = formData.get(questionName);
+                const correctAnswer = correctAnswers[questionName];
+                const feedbackEl = document.getElementById(`feedback-${questionName}`);
+                const radioLabel = document.querySelector(`input[name="${questionName}"][value="${selectedAnswer}"]`)?.closest('.radio-label');
+
+                 if (selectedAnswer) {
+                    if (selectedAnswer === correctAnswer) {
+                        score++;
+                        if (feedbackEl) {
+                             feedbackEl.innerHTML = `<span class="correct"><i class="fas fa-check mr-1"></i> <span class="lang-en">Correct!</span> <span class="lang-zh">正確！</span></span>`;
+                        }
+                         if(radioLabel) radioLabel.classList.add('bg-green-100', 'border-green-300');
+                    } else {
+                        if (feedbackEl) {
+                             feedbackEl.innerHTML = `<span class="incorrect"><i class="fas fa-times mr-1"></i> <span class="lang-en">Incorrect. The correct answer is ${correctAnswer === 'true' ? 'True' : 'False'}.</span> <span class="lang-zh">錯誤。 正確答案是 ${correctAnswer === 'true' ? '是' : '否'}。</span></span>`;
+                         }
+                         if(radioLabel) radioLabel.classList.add('bg-red-100', 'border-red-300');
+                     }
+                 } else {
+                     // Handle unanswered questions if 'required' attribute fails or is removed
+                     if (feedbackEl) {
+                         feedbackEl.innerHTML = `<span class="incorrect"><i class="fas fa-exclamation-circle mr-1"></i> <span class="lang-en">No answer selected.</span> <span class="lang-zh">未選擇答案。</span></span>`;
+                     }
+                 }
+            }
+
+            // Display results
+            let resultMessageEn = `You scored ${score} out of ${totalQuestions}.`;
+            let resultMessageZh = `您的得分是 ${score} / ${totalQuestions}。`;
+            let adviceEn = '';
+            let adviceZh = '';
+
+            if (score === totalQuestions) {
+                adviceEn = "Excellent! You have a great understanding of the safety guidelines.";
+                adviceZh = "太棒了！您對安全守則有很好的理解。";
+                resultsDiv.className = 'mt-12 p-6 bg-green-100 rounded-lg shadow-md text-center text-green-800';
+            } else if (score >= 7) {
+                adviceEn = "Good job! Please review the questions you missed to ensure complete understanding.";
+                adviceZh = "做得不錯！請重新檢視您答錯的問題以確保完全理解。";
+                 resultsDiv.className = 'mt-12 p-6 bg-yellow-100 rounded-lg shadow-md text-center text-yellow-800';
+            } else {
+                adviceEn = "Please carefully review the guidelines again, especially the areas where you made mistakes.";
+                adviceZh = "請仔細重新閱讀守則，特別是您答錯的部分。";
+                 resultsDiv.className = 'mt-12 p-6 bg-red-100 rounded-lg shadow-md text-center text-red-800';
+            }
+
+
+            resultsDiv.innerHTML = `
+                <h3 class="text-2xl font-bold mb-4">
+                    <span class="lang-en">Quiz Results</span>
+                    <span class="lang-zh">測驗結果</span>
+                </h3>
+                <p class="text-xl mb-2">${resultMessageEn}<br><span class="lang-zh">${resultMessageZh}</span></p>
+                <p>${adviceEn}<br><span class="lang-zh">${adviceZh}</span></p>
+                 <button onclick="window.scrollTo(0, 0); location.reload();" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
+                    <span class="lang-en">Try Again</span><span class="lang-zh"> / 再試一次</span>
+                 </button>
+                 <a href="index.html" class="mt-4 ml-4 inline-block bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 transition">
+                    <span class="lang-en">Back to Guidelines</span><span class="lang-zh"> / 返回守則</span>
+                 </a>
+            `;
+             resultsDiv.style.display = 'block';
+            resultsDiv.scrollIntoView({ behavior: 'smooth' }); // Scroll to show results
+        });
+    </script>
+</body>
+</html>

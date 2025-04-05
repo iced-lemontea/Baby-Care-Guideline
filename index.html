@@ -6,48 +6,57 @@
     <title>Newborn Baby Safety Guidelines | 嬰兒照護守則</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Body font */
+            -webkit-font-smoothing: antialiased; /* Smoother fonts */
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Nunito', sans-serif; /* Heading font */
+        }
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.4s ease-out;
         }
-
         .accordion.active .accordion-content {
             max-height: 1500px;
             transition: max-height 0.5s ease-in;
         }
-
         .accordion.active .accordion-icon {
             transform: rotate(180deg);
         }
-
         .floating-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 50;
         }
-
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-
         .pulse {
             animation: pulse 2s infinite;
         }
-
         .lang-zh {
             display: block;
             margin-top: 0.25rem;
             font-size: 0.95em;
         }
+        /* Ensure body font overrides Tailwind default */
+        .font-sans {
+             font-family: 'Inter', sans-serif;
+        }
 
     </style>
 </head>
-<body class="bg-blue-50 font-sans">
+<body class="bg-gray-100 font-sans"> 
     <!-- Header -->
     <header class="bg-blue-600 text-white shadow-lg">
         <div class="container mx-auto px-4 py-8">
@@ -55,7 +64,7 @@
                 <div class="flex items-center mb-4 md:mb-0">
                     <i class="fas fa-baby text-4xl mr-4"></i>
                     <div>
-                        <h1 class="text-3xl font-bold">
+                        <h1 class="text-3xl font-bold font-heading">
                             <span class="lang-en">Newborn Care Safety</span>
                             <span class="lang-zh block text-xl mt-1 text-blue-100">嬰兒照護守則</span>
                         </h1>
@@ -66,7 +75,7 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-lg p-2 shadow-md text-center">
-                    <p class="text-blue-800 font-semibold">
+                    <p class="text-blue-800 font-semibold font-heading">
                         <span class="lang-en">For Ling, Anna, Gigi & Grandparents</span>
                         <span class="lang-zh block text-sm text-gray-600">（陪月、家傭、Gigi, 祖父母）</span>
                     </p>
@@ -78,10 +87,12 @@
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-blue-500 to-blue-400 text-white py-12">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-4">
-                <span class="lang-en">Keeping Our Baby Safe</span>
-                <span class="lang-zh block text-2xl mt-1 text-blue-100">確保寶寶安全</span>
+             <!-- --- REPLACE [Baby's Name] --- -->
+            <h2 class="text-4xl font-bold mb-4 font-heading">
+                <span class="lang-en">Keeping Baby Lucas Safe</span>
+                <span class="lang-zh block text-2xl mt-1 text-blue-100">確保Lucas寶寶名字安全</span>
             </h2>
+             <!-- --- END REPLACE --- -->
             <p class="text-xl mb-8 max-w-3xl mx-auto">
                 <span class="lang-en">These guidelines ensure the health and safety of our precious newborn. Please read carefully and follow all instructions.</span>
                 <span class="lang-zh text-blue-100">本文件列出了確保寶寶安全與健康的基本規則。請詳細閱讀並嚴格遵守。</span>
@@ -109,6 +120,13 @@
                     </span>
                 </div>
                 <div class="bg-white bg-opacity-20 rounded-lg p-4 flex items-center flex-col md:flex-row text-center md:text-left">
+                    <i class="fas fa-bath text-2xl mb-2 md:mb-0 md:mr-2"></i>
+                    <span>
+                        <span class="lang-en">Bathing Safety</span><br>
+                        <span class="lang-zh text-sm text-blue-100">沐浴安全</span>
+                    </span>
+                </div>
+                 <div class="bg-white bg-opacity-20 rounded-lg p-4 flex items-center flex-col md:flex-row text-center md:text-left">
                     <i class="fas fa-shield-alt text-2xl mb-2 md:mb-0 md:mr-2"></i>
                     <span>
                         <span class="lang-en">General Safety</span><br>
@@ -123,7 +141,7 @@
     <main class="container mx-auto px-4 py-12">
         <!-- Introduction -->
         <div class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 font-heading">
                 <span class="lang-en">Welcome Caregivers</span>
                 <span class="lang-zh block text-xl mt-1 text-blue-700">歡迎照顧者</span>
             </h2>
@@ -144,135 +162,139 @@
         </div>
 
         <!-- Guidelines Accordion -->
-        <div class="space-y-4">
+        <div class="space-y-4 bg-blue-50 p-4 md:p-6 rounded-xl shadow-inner">
             <!-- Holding & Handling -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                         <div class="bg-blue-100 rounded-lg p-3 mr-4">
-                            <i class="fas fa-hands-helping text-blue-600 text-xl"></i>
+                            <i class="fas fa-hands-holding-child text-blue-600 text-2xl"></i> <!-- Changed icon -->
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800">
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">
                             <span class="lang-en">1. Holding & Handling the Baby</span>
                             <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">1. 抱寶寶與照顧方式</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                <div class="accordion-content px-6 pb-6">
-                    <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Always support the baby's head and neck when holding or carrying.</span>
-                                <span class="lang-zh">抱寶寶時務必托住頭部和頸部，新生兒頸部無力，容易受傷。</span>
-                            </span>
-                        </li>
-                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Wash hands before touching the baby to prevent infections.</span>
-                                <span class="lang-zh">觸摸寶寶前請務必洗手，以防細菌感染。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Never shake the baby – even gentle shaking can cause brain injury.</span>
-                                <span class="lang-zh">切勿搖晃寶寶，即使是逗玩，劇烈搖晃可能導致腦部損傷。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">No kissing on the face or hands to prevent infections.</span>
-                                <span class="lang-zh">請勿親寶寶的臉或手，避免傳染病菌。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Do not hold the baby when feeling sleepy or tired – always place the baby in a safe sleeping area.</span>
-                                <span class="lang-zh">感到疲倦時請勿抱寶寶，應將寶寶放在安全的睡眠區域。</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="mt-4 bg-blue-50 rounded-lg p-4">
-                        <p class="text-blue-700"><i class="fas fa-lightbulb mr-2"></i>
-                           <strong><span class="lang-en">Tip:</span><span class="lang-zh">提示：</span></strong>
-                           <span class="lang-en">When picking up the baby, slide one hand under the head and neck, and the other under the bottom for full support.</span>
-                           <span class="lang-zh">抱起寶寶時，一手托住頭頸部，另一手托住臀部，給予完全支撐。</span>
-                        </p>
+                <div class="accordion-content">
+                    <div class="px-6 pt-4 pb-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Always support the baby's head and neck when holding or carrying.</span>
+                                    <span class="lang-zh">抱寶寶時務必托住頭部和頸部，新生兒頸部無力，容易受傷。</span>
+                                </span>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Wash hands before touching the baby to prevent infections.</span>
+                                    <span class="lang-zh">觸摸寶寶前請務必洗手，以防細菌感染。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Never shake the baby – even gentle shaking can cause brain injury.</span>
+                                    <span class="lang-zh">切勿搖晃寶寶，即使是逗玩，劇烈搖晃可能導致腦部損傷。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">No kissing on the face or hands to prevent infections.</span>
+                                    <span class="lang-zh">請勿親寶寶的臉或手，避免傳染病菌。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Do not hold the baby when feeling sleepy or tired – always place the baby in a safe sleeping area.</span>
+                                    <span class="lang-zh">感到疲倦時請勿抱寶寶，應將寶寶放在安全的睡眠區域。</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 bg-blue-50 rounded-lg p-4">
+                            <p class="text-blue-700"><i class="fas fa-lightbulb mr-2"></i>
+                               <strong><span class="lang-en">Tip:</span><span class="lang-zh">提示：</span></strong>
+                               <span class="lang-en">When picking up the baby, slide one hand under the head and neck, and the other under the bottom for full support.</span>
+                               <span class="lang-zh">抱起寶寶時，一手托住頭頸部，另一手托住臀部，給予完全支撐。</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Feeding Rules -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
-                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
+                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                         <div class="bg-pink-100 rounded-lg p-3 mr-4">
-                            <i class="fas fa-bottle text-pink-600 text-xl"></i>
+                            <i class="fas fa-bottle-droplet text-pink-600 text-2xl"></i> <!-- Updated Icon -->
                         </div>
-                         <h3 class="text-xl font-semibold text-gray-800">
+                         <h3 class="text-xl font-semibold text-gray-800 font-heading">
                             <span class="lang-en">2. Feeding Rules</span>
                             <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">2. 餵奶守則</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                <div class="accordion-content px-6 pb-6">
-                   <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Baby should only have breast milk or formula – no water, honey, or solid foods before 6 months.</span>
-                                <span class="lang-zh">6 個月內只餵母乳或配方奶，嚴禁餵水、蜂蜜或任何固體食物。</span>
-                            </span>
-                        </li>
-                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Never prop the bottle – always hold the baby when feeding.</span>
-                                <span class="lang-zh">餵奶時請抱好寶寶，禁止讓奶瓶自行支撐，以免嗆奶。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Burp the baby after every feed to prevent gas and discomfort.</span>
-                                <span class="lang-zh">餵奶後務必幫寶寶拍嗝，防止脹氣不適。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Do not heat milk in the microwave, as it can cause uneven heating.</span>
-                                <span class="lang-zh">不可使用微波爐加熱奶瓶，容易造成燙傷風險。</span>
-                            </span>
-                        </li>
-                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">If the baby refuses the bottle or stops drinking, do not force-feed.</span>
-                                <span class="lang-zh">若寶寶不想喝奶，請勿強迫餵奶。</span>
-                            </span>
-                        </li>
-                    </ul>
-                     <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-pink-50 rounded-lg p-4">
-                            <p class="text-pink-700 font-medium"><i class="fas fa-temperature-high mr-2"></i>
-                                <strong><span class="lang-en">Milk Temperature:</span><span class="lang-zh">奶水溫度：</span></strong><br>
-                                <span class="lang-en">Test on your wrist – it should feel lukewarm, not hot.</span>
-                                <span class="lang-zh">滴在手腕內側測試，應感覺溫暖而不燙。</span>
-                            </p>
-                        </div>
-                        <div class="bg-pink-50 rounded-lg p-4">
-                             <p class="text-pink-700 font-medium"><i class="fas fa-clock mr-2"></i>
-                                <strong><span class="lang-en">Storage:</span><span class="lang-zh">儲存：</span></strong><br>
-                                <span class="lang-en">Prepared formula should be used within 1 hour or discarded.</span>
-                                <span class="lang-zh">泡好的配方奶應在 1 小時內飲用完畢，否則應丟棄。</span>
-                            </p>
+                <div class="accordion-content">
+                   <div class="px-6 pt-4 pb-6">
+                       <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Baby should only have breast milk or formula – no water, honey, or solid foods before 6 months.</span>
+                                    <span class="lang-zh">6 個月內只餵母乳或配方奶，嚴禁餵水、蜂蜜或任何固體食物。</span>
+                                </span>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Never prop the bottle – always hold the baby when feeding.</span>
+                                    <span class="lang-zh">餵奶時請抱好寶寶，禁止讓奶瓶自行支撐，以免嗆奶。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Burp the baby after every feed to prevent gas and discomfort.</span>
+                                    <span class="lang-zh">餵奶後務必幫寶寶拍嗝，防止脹氣不適。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Do not heat milk in the microwave, as it can cause uneven heating. Use a bottle warmer or warm water bath.</span>
+                                    <span class="lang-zh">不可使用微波爐加熱奶瓶，容易造成燙傷風險。請使用暖奶器或溫水浸泡。</span>
+                                </span>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">If the baby refuses the bottle or stops drinking, do not force-feed.</span>
+                                    <span class="lang-zh">若寶寶不想喝奶，請勿強迫餵奶。</span>
+                                </span>
+                            </li>
+                        </ul>
+                         <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-pink-50 rounded-lg p-4">
+                                <p class="text-pink-700 font-medium"><i class="fas fa-temperature-high mr-2"></i>
+                                    <strong><span class="lang-en">Milk Temperature:</span><span class="lang-zh">奶水溫度：</span></strong><br>
+                                    <span class="lang-en">Test on your wrist – it should feel lukewarm, not hot.</span>
+                                    <span class="lang-zh">滴在手腕內側測試，應感覺溫暖而不燙。</span>
+                                </p>
+                            </div>
+                            <div class="bg-pink-50 rounded-lg p-4">
+                                 <p class="text-pink-700 font-medium"><i class="fas fa-clock mr-2"></i>
+                                    <strong><span class="lang-en">Storage:</span><span class="lang-zh">儲存：</span></strong><br>
+                                    <span class="lang-en">Prepared formula should be used within 1 hour or discarded.</span>
+                                    <span class="lang-zh">泡好的配方奶應在 1 小時內飲用完畢，否則應丟棄。</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -283,471 +305,528 @@
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                         <div class="bg-purple-100 rounded-lg p-3 mr-4">
-                            <i class="fas fa-moon text-purple-600 text-xl"></i>
+                            <i class="fas fa-moon text-purple-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800">
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">
                             <span class="lang-en">3. Safe Sleep Practices</span>
                             <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">3. 睡眠安全</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                <div class="accordion-content px-6 pb-6">
-                   <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Always place the baby on their back to sleep – no side or tummy sleeping.</span>
-                                <span class="lang-zh">寶寶只能仰睡，不能趴睡或側睡，避免嬰兒猝死症（SIDS）。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">The crib must be completely empty – no pillows, blankets, or stuffed toys.</span>
-                                <span class="lang-zh">嬰兒床應保持空曠，不能放枕頭、棉被、玩偶或床圍。</span>
-                             </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">No co-sleeping with adults on beds, sofas, or armchairs.</span>
-                                <span class="lang-zh">禁止與大人同床睡覺，避免壓傷或窒息風險。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">Keep the room cool (20–22°C) and smoke-free.</span>
-                                <span class="lang-zh">室內溫度應保持在 20-22°C，並確保空氣流通。</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="mt-6">
-                        <h4 class="font-semibold text-gray-800 mb-3">
-                            <span class="lang-en">Safe Sleep Environment:</span>
-                            <span class="lang-zh">安全睡眠環境：</span>
-                        </h4>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="bg-purple-50 rounded-lg p-4 flex items-start">
-                                <i class="fas fa-check text-purple-600 mt-1 mr-2 flex-shrink-0"></i>
+                <div class="accordion-content">
+                   <div class="px-6 pt-4 pb-6">
+                       <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Firm mattress with fitted sheet only</span>
-                                    <span class="lang-zh">堅實床墊，僅用床包</span>
+                                    <span class="lang-en">Always place the baby on their back to sleep – no side or tummy sleeping.</span>
+                                    <span class="lang-zh">寶寶只能仰睡，不能趴睡或側睡，避免嬰兒猝死症（SIDS）。</span>
                                 </span>
-                            </div>
-                            <div class="bg-purple-50 rounded-lg p-4 flex items-start">
-                                <i class="fas fa-check text-purple-600 mt-1 mr-2 flex-shrink-0"></i>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Sleepsack instead of blankets</span>
-                                    <span class="lang-zh">使用睡袋代替棉被</span>
-                                </span>
-                            </div>
-                            <div class="bg-purple-50 rounded-lg p-4 flex items-start">
-                                <i class="fas fa-check text-purple-600 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span class="lang-en">The crib must be completely empty – no pillows, blankets, stuffed toys, or bumpers.</span>
+                                    <span class="lang-zh">嬰兒床應保持空曠，不能放枕頭、棉被、玩偶或床圍。</span>
+                                 </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Room-sharing but not bed-sharing</span>
-                                    <span class="lang-zh">同房不同床</span>
+                                    <span class="lang-en">No co-sleeping with adults on beds, sofas, or armchairs.</span>
+                                    <span class="lang-zh">禁止與大人同床睡覺，避免壓傷或窒息風險。</span>
                                 </span>
+                            </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">Keep the room cool (20–22°C / 68-72°F) and smoke-free.</span>
+                                    <span class="lang-zh">室內溫度應保持在 20-22°C，並確保空氣流通及無菸。</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-800 mb-3 font-heading">
+                                <span class="lang-en">Safe Sleep Environment:</span>
+                                <span class="lang-zh">安全睡眠環境：</span>
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-purple-50 rounded-lg p-4 flex items-start">
+                                    <i class="fas fa-check text-purple-600 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span>
+                                        <span class="lang-en">Firm mattress with fitted sheet only</span>
+                                        <span class="lang-zh">堅實床墊，僅用床包</span>
+                                    </span>
+                                </div>
+                                <div class="bg-purple-50 rounded-lg p-4 flex items-start">
+                                    <i class="fas fa-check text-purple-600 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span>
+                                        <span class="lang-en">Sleepsack instead of blankets</span>
+                                        <span class="lang-zh">使用睡袋代替棉被</span>
+                                    </span>
+                                </div>
+                                <div class="bg-purple-50 rounded-lg p-4 flex items-start">
+                                    <i class="fas fa-check text-purple-600 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span>
+                                        <span class="lang-en">Room-sharing but not bed-sharing</span>
+                                        <span class="lang-zh">同房不同床</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-             <!-- Diapering & Hygiene -->
+            <!-- Diapering & Hygiene -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                         <div class="bg-green-100 rounded-lg p-3 mr-4">
-                            <i class="fas fa-baby text-green-600 text-xl"></i>
+                            <i class="fas fa-pump-soap text-green-600 text-2xl"></i>
                         </div>
-                         <h3 class="text-xl font-semibold text-gray-800">
+                         <h3 class="text-xl font-semibold text-gray-800 font-heading">
                             <span class="lang-en">4. Diapering & Hygiene</span>
                             <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">4. 換尿布與衛生習慣</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                <div class="accordion-content px-6 pb-6">
-                    <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Wash hands before and after every diaper change.</span>
-                                <span class="lang-zh">換尿布前後務必洗手，保持衛生。</span>
-                            </span>
-                        </li>
-                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Wipe from front to back (for girls) to prevent infections.</span>
-                                <span class="lang-zh">擦拭時，請從前往後擦拭（特別是女寶寶），以防感染。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">Change diapers frequently to prevent diaper rash.</span>
-                                <span class="lang-zh">尿布應定期更換，避免尿布疹。</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="mt-6">
-                         <h4 class="font-semibold text-gray-800 mb-3">
-                             <span class="lang-en">Diaper Change Station Safety:</span>
-                             <span class="lang-zh">換尿布台安全：</span>
-                         </h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-green-50 rounded-lg p-4">
-                                <p class="text-green-700"><i class="fas fa-hand-paper mr-2"></i>
-                                   <strong><span class="lang-en">Never leave unattended:</span><span class="lang-zh">切勿離開：</span></strong><br>
-                                   <span class="lang-en">Keep one hand on baby at all times on changing table.</span>
-                                   <span class="lang-zh">在換尿布台上時，務必隨時用一隻手護著寶寶。</span>
-                                </p>
-                            </div>
-                            <div class="bg-green-50 rounded-lg p-4">
-                                 <p class="text-green-700"><i class="fas fa-burn mr-2"></i>
-                                    <strong><span class="lang-en">Diaper rash care:</span><span class="lang-zh">尿布疹護理：</span></strong><br>
-                                    <span class="lang-en">Use zinc oxide cream for redness, inform parents if rash persists.</span>
-                                    <span class="lang-zh">如有紅疹可使用氧化鋅藥膏，若持續未改善請告知父母。</span>
-                                </p>
+                <div class="accordion-content">
+                    <div class="px-6 pt-4 pb-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Wash hands before and after every diaper change.</span>
+                                    <span class="lang-zh">換尿布前後務必洗手，保持衛生。</span>
+                                </span>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Wipe from front to back (for girls) to prevent infections.</span>
+                                    <span class="lang-zh">擦拭時，請從前往後擦拭（特別是女寶寶），以防感染。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">Change diapers frequently to prevent diaper rash.</span>
+                                    <span class="lang-zh">尿布應定期更換，避免尿布疹。</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                             <h4 class="font-semibold text-gray-800 mb-3 font-heading">
+                                 <span class="lang-en">Diaper Change Station Safety:</span>
+                                 <span class="lang-zh">換尿布台安全：</span>
+                             </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-green-50 rounded-lg p-4">
+                                    <p class="text-green-700"><i class="fas fa-hand-paper mr-2"></i>
+                                       <strong><span class="lang-en">Never leave unattended:</span><span class="lang-zh">切勿離開：</span></strong><br>
+                                       <span class="lang-en">Keep one hand on baby at all times on changing table.</span>
+                                       <span class="lang-zh">在換尿布台上時，務必隨時用一隻手護著寶寶。</span>
+                                    </p>
+                                </div>
+                                <div class="bg-green-50 rounded-lg p-4">
+                                     <p class="text-green-700"><i class="fas fa-prescription-bottle text-green-700 mr-2"></i>
+                                        <strong><span class="lang-en">Diaper rash care:</span><span class="lang-zh">尿布疹護理：</span></strong><br>
+                                        <span class="lang-en">Use zinc oxide cream for redness, inform parents if rash persists.</span>
+                                        <span class="lang-zh">如有紅疹可使用氧化鋅藥膏，若持續未改善請告知父母。</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- General Safety -->
+            <!-- Bathing Safety -->
+            <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
+                    <div class="flex items-center">
+                        <div class="bg-cyan-100 rounded-lg p-3 mr-4">
+                            <i class="fas fa-bath text-cyan-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">
+                            <span class="lang-en">5. Bathing Safety</span>
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">5. 沐浴安全</span>
+                        </h3>
+                    </div>
+                    <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
+                </button>
+                <div class="accordion-content">
+                    <div class="px-6 pt-4 pb-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Never leave the baby unattended during bath time, not even for a second. Gather all supplies beforehand.</span>
+                                    <span class="lang-zh">切勿在寶寶洗澡時離開，即使一秒鐘也不行。事先準備好所有用品。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Always check water temperature carefully (use wrist or elbow) before placing the baby in. It should be lukewarm.</span>
+                                    <span class="lang-zh">放入寶寶前務必仔細檢查水溫（用手腕或手肘測試），應感覺溫暖而不燙。</span>
+                                </span>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Keep one hand supporting the baby at all times during the bath.</span>
+                                    <span class="lang-zh">洗澡過程中，務必隨時用一隻手支撐寶寶。</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 bg-cyan-50 rounded-lg p-4">
+                             <p class="text-cyan-700"><i class="fas fa-temperature-low mr-2"></i>
+                                <strong><span class="lang-en">Water Temp Tip:</span><span class="lang-zh">水溫提示：</span></strong>
+                                <span class="lang-en">Aim for around 37-38°C (98.6-100.4°F). Use a bath thermometer if unsure.</span>
+                                <span class="lang-zh">目標約 37-38°C。如果不確定，請使用洗澡溫度計。</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- General Safety (Renumbered) -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                         <div class="bg-red-100 rounded-lg p-3 mr-4">
-                            <i class="fas fa-shield-alt text-red-600 text-xl"></i>
+                            <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800">
-                            <span class="lang-en">5. General Safety</span>
-                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">5. 一般安全規則</span>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">
+                            <span class="lang-en">6. General Safety</span>
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">6. 一般安全規則</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                <div class="accordion-content px-6 pb-6">
-                    <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Never leave the baby unattended on a bed, sofa, or changing table.</span>
-                                <span class="lang-zh">請勿讓寶寶獨自躺在沙發、床上或換尿布檯上，以免跌落。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Keep small objects and plastic bags away to prevent choking.</span>
-                                <span class="lang-zh">遠離塑膠袋、小物件，以防寶寶誤吞窒息。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Avoid strong perfumes, candles, or mosquito coils – they can irritate the baby's breathing.</span>
-                                <span class="lang-zh">避免強烈香水、蠟燭、蚊香，以防影響寶寶呼吸道。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">No smoking or alcohol near the baby.</span>
-                                <span class="lang-zh">嚴禁在寶寶周圍吸菸或飲酒。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">No direct sun exposure – protect the baby's skin.</span>
-                                <span class="lang-zh">禁止寶寶直接曝曬陽光，請適當遮蔽。</span>
-                            </span>
-                        </li>
-                         <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">Do not bring the baby to the balcony.</span>
-                                <span class="lang-zh">請勿帶寶寶到陽台。</span>
-                             </span>
-                         </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">Do not bring the baby close to any open window – there are no window guards and we live in a high-rise.</span>
-                                <span class="lang-zh">請勿將寶寶靠近開著的窗戶 —— 我們住在高樓，且窗戶沒有防護裝置。</span>
-                             </span>
-                         </li>
-                    </ul>
-                    <div class="mt-6 bg-red-50 rounded-lg p-4">
-                         <h4 class="font-semibold text-red-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>
-                            <span class="lang-en">High-Rise Safety:</span>
-                            <span class="lang-zh">高樓安全：</span>
-                         </h4>
-                         <p class="text-red-700">
-                            <span class="lang-en">Windows must remain closed when baby is in the room. Never hold baby near an open window, even if you're just looking outside.</span>
-                            <span class="lang-zh">當寶寶在房間時，窗戶必須保持關閉。切勿抱著寶寶靠近打開的窗戶，即使只是看看外面也不行。</span>
-                        </p>
+                <div class="accordion-content">
+                   <div class="px-6 pt-4 pb-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Never leave the baby unattended on a bed, sofa, or changing table.</span>
+                                    <span class="lang-zh">請勿讓寶寶獨自躺在沙發、床上或換尿布檯上，以免跌落。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Keep small objects and plastic bags away to prevent choking.</span>
+                                    <span class="lang-zh">遠離塑膠袋、小物件，以防寶寶誤吞窒息。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Avoid strong perfumes, candles, or mosquito coils – they can irritate the baby's breathing.</span>
+                                    <span class="lang-zh">避免強烈香水、蠟燭、蚊香，以防影響寶寶呼吸道。</span>
+                                </span>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Check baby's temperature by feeling the back of their neck or chest; avoid overdressing. They should feel warm, not hot or sweaty.</span>
+                                    <span class="lang-zh">觸摸寶寶頸背或胸口檢查體溫；避免穿著過多。應感覺溫暖，而非過熱或出汗。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">No smoking or alcohol near the baby.</span>
+                                    <span class="lang-zh">嚴禁在寶寶周圍吸菸或飲酒。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">No direct sun exposure – protect the baby's skin.</span>
+                                    <span class="lang-zh">禁止寶寶直接曝曬陽光，請適當遮蔽。</span>
+                                </span>
+                            </li>
+                             <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">Do not bring the baby to the balcony.</span>
+                                    <span class="lang-zh">請勿帶寶寶到陽台。</span>
+                                 </span>
+                             </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">Do not bring the baby close to any open window – there are no window guards and we live in a high-rise.</span>
+                                    <span class="lang-zh">請勿將寶寶靠近開著的窗戶 —— 我們住在高樓，且窗戶沒有防護裝置。</span>
+                                 </span>
+                             </li>
+                        </ul>
+                        <div class="mt-6 bg-red-50 rounded-lg p-4">
+                             <h4 class="font-semibold text-red-800 mb-2 font-heading">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>
+                                <span class="lang-en">High-Rise Safety:</span>
+                                <span class="lang-zh">高樓安全：</span>
+                             </h4>
+                             <p class="text-red-700">
+                                <span class="lang-en">Windows must remain closed when baby is in the room. Never hold baby near an open window, even if you're just looking outside.</span>
+                                <span class="lang-zh">當寶寶在房間時，窗戶必須保持關閉。切勿抱著寶寶靠近打開的窗戶，即使只是看看外面也不行。</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Car Seat & Transportation Safety -->
+            <!-- Car Seat & Transportation Safety (Renumbered) -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                  <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                         <div class="bg-yellow-100 rounded-lg p-3 mr-4">
-                             <i class="fas fa-car text-yellow-600 text-xl"></i>
+                             <i class="fas fa-car text-yellow-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800">
-                             <span class="lang-en">6. Car Seat & Transportation Safety</span>
-                             <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">6. 汽車安全與交通守則</span>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">
+                             <span class="lang-en">7. Car Seat & Transportation Safety</span>
+                             <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">7. 汽車安全與交通守則</span>
                          </h3>
                     </div>
                      <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                 <div class="accordion-content px-6 pb-6">
-                    <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">The baby must always be in a rear-facing car seat when in a vehicle.</span>
-                                <span class="lang-zh">寶寶乘車時，必須使用後向式嬰兒安全座椅，不可抱著寶寶乘車。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Do not hold the baby in your lap while in a moving car.</span>
-                                <span class="lang-zh">車輛行駛時，嚴禁將寶寶抱在懷中。</span>
-                             </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Make sure the car seat straps are properly secured and snug.</span>
-                                <span class="lang-zh">確保安全座椅的帶子已正確固定且服貼。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">No heavy clothing or thick blankets in the car seat – this affects the harness fit.</span>
-                                <span class="lang-zh">請勿讓寶寶穿著厚重衣物或蓋厚毯子坐在安全座椅上，這會影響安全帶的服貼度。</span>
-                             </span>
-                        </li>
-                    </ul>
-                    <div class="mt-6">
-                        <h4 class="font-semibold text-gray-800 mb-3">
-                            <span class="lang-en">Car Seat Checklist:</span>
-                            <span class="lang-zh">安全座椅檢查：</span>
-                        </h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-yellow-50 rounded-lg p-4 flex items-start">
-                                <i class="fas fa-car-side text-yellow-600 mt-1 mr-2 flex-shrink-0"></i>
+                 <div class="accordion-content">
+                    <div class="px-6 pt-4 pb-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Harness straps should be at or below baby's shoulders</span>
-                                    <span class="lang-zh">安全帶肩帶應位於寶寶肩膀或肩膀稍下方</span>
+                                    <span class="lang-en">The baby must always be in a rear-facing car seat when in a vehicle.</span>
+                                    <span class="lang-zh">寶寶乘車時，必須使用後向式嬰兒安全座椅，不可抱著寶寶乘車。</span>
                                 </span>
-                            </div>
-                            <div class="bg-yellow-50 rounded-lg p-4 flex items-start">
-                                <i class="fas fa-car-side text-yellow-600 mt-1 mr-2 flex-shrink-0"></i>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
-                                    <span class="lang-en">Chest clip at armpit level, straps tight enough you can't pinch any slack</span>
-                                    <span class="lang-zh">胸扣位於腋下高度，安全帶拉緊至無法捏起任何鬆弛部分</span>
+                                    <span class="lang-en">Do not hold the baby in your lap while in a moving car.</span>
+                                    <span class="lang-zh">車輛行駛時，嚴禁將寶寶抱在懷中。</span>
+                                 </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Make sure the car seat straps are properly secured and snug.</span>
+                                    <span class="lang-zh">確保安全座椅的帶子已正確固定且服貼。</span>
                                 </span>
+                            </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">No heavy clothing or thick blankets in the car seat – this affects the harness fit.</span>
+                                    <span class="lang-zh">請勿讓寶寶穿著厚重衣物或蓋厚毯子坐在安全座椅上，這會影響安全帶的服貼度。</span>
+                                 </span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-800 mb-3 font-heading">
+                                <span class="lang-en">Car Seat Checklist:</span>
+                                <span class="lang-zh">安全座椅檢查：</span>
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-yellow-50 rounded-lg p-4 flex items-start">
+                                    <i class="fas fa-car-side text-yellow-600 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span>
+                                        <span class="lang-en">Harness straps should be at or below baby's shoulders</span>
+                                        <span class="lang-zh">安全帶肩帶應位於寶寶肩膀或肩膀稍下方</span>
+                                    </span>
+                                </div>
+                                <div class="bg-yellow-50 rounded-lg p-4 flex items-start">
+                                    <i class="fas fa-car-side text-yellow-600 mt-1 mr-2 flex-shrink-0"></i>
+                                    <span>
+                                        <span class="lang-en">Chest clip at armpit level, straps tight enough you can't pinch any slack</span>
+                                        <span class="lang-zh">胸扣位於腋下高度，安全帶拉緊至無法捏起任何鬆弛部分</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Interaction & Playtime -->
+            <!-- Interaction & Playtime (Renumbered) -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                         <div class="bg-indigo-100 rounded-lg p-3 mr-4">
-                            <i class="fas fa-gamepad text-indigo-600 text-xl"></i>
+                            <i class="fas fa-puzzle-piece text-indigo-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800">
-                            <span class="lang-en">7. Interaction & Playtime</span>
-                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">7. 與寶寶互動與遊戲</span>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">
+                            <span class="lang-en">8. Interaction & Playtime</span>
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">8. 與寶寶互動與遊戲</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                <div class="accordion-content px-6 pb-6">
-                     <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Do not shake, toss, or play roughly with the baby.</span>
-                                <span class="lang-zh">不可劇烈搖晃、拋起寶寶，可能導致腦部損傷。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">Keep all toys clean and free of small parts.</span>
-                                <span class="lang-zh">玩具需定期清潔，避免細小零件，以防誤吞。</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="mt-6 bg-indigo-50 rounded-lg p-4">
-                        <h4 class="font-semibold text-indigo-800 mb-2"><i class="fas fa-child mr-2"></i>
-                            <span class="lang-en">Appropriate Play:</span>
-                            <span class="lang-zh">適當的遊戲：</span>
-                        </h4>
-                         <p class="text-indigo-700">
-                            <span class="lang-en">Newborns enjoy gentle interaction: talking, singing, showing high-contrast images. Avoid overstimulation - watch for signs like turning away or fussiness.</span>
-                            <span class="lang-zh">新生兒喜歡溫和的互動：說話、唱歌、看高對比圖案。避免過度刺激 - 注意寶寶轉開頭或煩躁的跡象。</span>
-                        </p>
+                <div class="accordion-content">
+                     <div class="px-6 pt-4 pb-6">
+                         <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Do not shake, toss, or play roughly with the baby.</span>
+                                    <span class="lang-zh">不可劇烈搖晃、拋起寶寶，可能導致腦部損傷。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">Keep all toys clean and free of small parts.</span>
+                                    <span class="lang-zh">玩具需定期清潔，避免細小零件，以防誤吞。</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 bg-indigo-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-indigo-800 mb-2 font-heading">
+                                <i class="fas fa-child mr-2"></i>
+                                <span class="lang-en">Appropriate Play:</span>
+                                <span class="lang-zh">適當的遊戲：</span>
+                            </h4>
+                             <p class="text-indigo-700">
+                                <span class="lang-en">Newborns enjoy gentle interaction: talking, singing, showing high-contrast images. Avoid overstimulation - watch for signs like turning away or fussiness.</span>
+                                <span class="lang-zh">新生兒喜歡溫和的互動：說話、唱歌、看高對比圖案。避免過度刺激 - 注意寶寶轉開頭或煩躁的跡象。</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Visitors & Outdoor Rules -->
+            <!-- Visitors & Outdoor Rules (Renumbered) -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                         <div class="bg-teal-100 rounded-lg p-3 mr-4">
-                            <i class="fas fa-users text-teal-600 text-xl"></i>
+                            <i class="fas fa-users text-teal-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800">
-                            <span class="lang-en">8. Visitors & Outdoor Rules</span>
-                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">8. 訪客與外出注意事項</span>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">
+                            <span class="lang-en">9. Visitors & Outdoor Rules</span>
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">9. 訪客與外出注意事項</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                <div class="accordion-content px-6 pb-6">
-                     <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">No sick visitors – anyone with a cough, fever, or illness should stay away.</span>
-                                <span class="lang-zh">有感冒、發燒或咳嗽者，請勿接觸寶寶。</span>
-                            </span>
-                        </li>
-                         <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Avoid crowded places for the first few months.</span>
-                                <span class="lang-zh">避免帶寶寶去人多擁擠的地方，降低感染風險。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">Protect the baby from direct sunlight with a hat or light cover.</span>
-                                <span class="lang-zh">用帽子或薄罩保護寶寶免受陽光直射。</span>
-                             </span>
-                        </li>
-                    </ul>
-                    <div class="mt-6">
-                        <h4 class="font-semibold text-gray-800 mb-3">
-                            <span class="lang-en">Visitor Guidelines:</span>
-                            <span class="lang-zh">訪客守則：</span>
-                        </h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-teal-50 rounded-lg p-4">
-                                <p class="text-teal-700"><i class="fas fa-hand-sparkles mr-2"></i>
-                                    <span class="lang-en">All visitors must wash hands before touching baby</span>
-                                    <span class="lang-zh">所有訪客接觸寶寶前必須洗手</span>
-                                </p>
-                            </div>
-                            <div class="bg-teal-50 rounded-lg p-4">
-                                <p class="text-teal-700"><i class="fas fa-kiss-wink-heart mr-2"></i>
-                                    <span class="lang-en">No kissing baby's face or hands</span>
-                                    <span class="lang-zh">禁止親吻寶寶的臉或手</span>
-                                </p>
+                <div class="accordion-content">
+                     <div class="px-6 pt-4 pb-6">
+                         <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">No sick visitors – anyone with a cough, fever, or illness should stay away.</span>
+                                    <span class="lang-zh">有感冒、發燒或咳嗽者，請勿接觸寶寶。</span>
+                                </span>
+                            </li>
+                             <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Avoid crowded places for the first few months.</span>
+                                    <span class="lang-zh">避免帶寶寶去人多擁擠的地方，降低感染風險。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">Protect the baby from direct sunlight with a hat or light cover.</span>
+                                    <span class="lang-zh">用帽子或薄罩保護寶寶免受陽光直射。</span>
+                                 </span>
+                            </li>
+                        </ul>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-800 mb-3 font-heading">
+                                <span class="lang-en">Visitor Guidelines:</span>
+                                <span class="lang-zh">訪客守則：</span>
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-teal-50 rounded-lg p-4">
+                                    <p class="text-teal-700"><i class="fas fa-hand-sparkles mr-2"></i>
+                                        <span class="lang-en">All visitors must wash hands before touching baby</span>
+                                        <span class="lang-zh">所有訪客接觸寶寶前必須洗手</span>
+                                    </p>
+                                </div>
+                                <div class="bg-teal-50 rounded-lg p-4">
+                                    <p class="text-teal-700"><i class="fas fa-ban-smoking mr-2"></i>
+                                        <span class="lang-en">No smoking near baby / Ask smokers to change clothes & wash hands</span>
+                                        <span class="lang-zh">禁止在寶寶附近吸菸 / 要求吸菸者更衣洗手</span>
+                                    </p>
+                                </div>
+                                <div class="bg-teal-50 rounded-lg p-4 md:col-span-2">
+                                    <p class="text-teal-700"><i class="fas fa-head-side-cough-slash mr-2"></i>
+                                        <span class="lang-en">No kissing baby's face or hands. Postpone visit if feeling unwell.</span>
+                                        <span class="lang-zh">禁止親吻寶寶的臉或手。若感不適請延後探訪。</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Emergency Situations -->
+            <!-- Emergency Situations (Renumbered) -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
                          <div class="bg-orange-100 rounded-lg p-3 mr-4">
-                            <i class="fas fa-exclamation-triangle text-orange-600 text-xl"></i>
+                            <i class="fas fa-first-aid text-orange-600 text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800">
-                            <span class="lang-en">9. Emergency Situations</span>
-                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">9. 緊急情況處理</span>
+                        <h3 class="text-xl font-semibold text-gray-800 font-heading">
+                            <span class="lang-en">10. Emergency Situations</span>
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">10. 緊急情況處理</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
-                 <div class="accordion-content px-6 pb-6">
-                    <ul class="space-y-3 text-gray-700 pt-4">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">If the baby has difficulty breathing, turns blue, or chokes, seek help immediately.</span>
-                                <span class="lang-zh">若寶寶呼吸困難、嘴唇發紫、窒息，請立即尋求醫療協助。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">A fever over 38°C requires immediate attention – inform us right away.</span>
-                                <span class="lang-zh">寶寶體溫超過 38°C，請立即通知父母。</span>
-                             </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                            <span>
-                                <span class="lang-en">Do not give any medication without approval from the parents.</span>
-                                <span class="lang-zh">不可擅自給寶寶服用任何藥物，所有藥物須經父母同意。</span>
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                             <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
-                             <span>
-                                <span class="lang-en">Report any unusual symptoms (excessive crying, refusal to eat, rashes) immediately.</span>
-                                <span class="lang-zh">若有任何異常症狀（過度哭鬧、拒食、皮疹等），請立即回報。</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="mt-6 bg-orange-50 rounded-lg p-4">
-                        <h4 class="font-semibold text-orange-800 mb-2"><i class="fas fa-phone mr-2"></i>
-                            <span class="lang-en">Emergency Contacts:</span>
-                            <span class="lang-zh">緊急聯絡方式：</span>
-                        </h4>
-                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="font-medium">
-                                    <span class="lang-en">Parents' Mobile:</span>
-                                    <span class="lang-zh">父母手機：</span>
-                                </p>
-                                <p class="text-orange-600">Mother: 9153-XXXX</p>
-                                <p class="text-orange-600">Father: 6156-XXXX</p>
-                             </div>
-                             <div class="bg-white rounded-lg p-3 shadow-sm">
-                                 <p class="font-medium">
-                                     <span class="lang-en">Pediatrician:</span>
-                                     <span class="lang-zh">兒科醫生：</span>
-                                 </p>
-                                 <p class="text-orange-600">Dr. TBC: XXX-XXX-XXXX</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-3 shadow-sm">
-                                <p class="font-medium">
-                                    <span class="lang-en">Emergency Services:</span>
-                                    <span class="lang-zh">緊急服務：</span>
-                                </p>
-                                <p class="text-orange-600">
-                                    <span class="lang-en">999</span>
-                                    <span class="lang-zh">999</span>
-                                </p>
-                            </div>
+                 <div class="accordion-content">
+                    <div class="px-6 pt-4 pb-6">
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">If the baby has difficulty breathing, turns blue, or chokes, seek help immediately (Call emergency services / Inform parents).</span>
+                                    <span class="lang-zh">若寶寶呼吸困難、嘴唇發紫、窒息，請立即尋求醫療協助（致電緊急服務 / 通知父母）。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">A fever over 38°C (100.4°F) requires immediate attention – inform parents right away.</span>
+                                    <span class="lang-zh">寶寶體溫超過 38°C，請立即通知父母。</span>
+                                 </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                <span>
+                                    <span class="lang-en">Do not give any medication without approval from the parents.</span>
+                                    <span class="lang-zh">不可擅自給寶寶服用任何藥物，所有藥物須經父母同意。</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                                 <span>
+                                    <span class="lang-en">Report any unusual symptoms (excessive crying, refusal to eat, rashes, lethargy) immediately.</span>
+                                    <span class="lang-zh">若有任何異常症狀（過度哭鬧、拒食、皮疹、精神萎靡等），請立即回報。</span>
+                                </span>
+                            </li>
+                        </ul>
+                         <div class="mt-6 bg-orange-50 rounded-lg p-4">
+                            <h4 class="font-semibold text-orange-800 mb-2 font-heading">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                <span class="lang-en">Key Reminder:</span>
+                                <span class="lang-zh">重要提醒：</span>
+                             </h4>
+                             <p class="text-orange-700">
+                                <span class="lang-en">Ensure you have parent contact numbers easily accessible at all times. In any doubt or emergency, contact parents immediately.</span>
+                                <span class="lang-zh">確保您隨時可以方便地取得父母的聯絡電話。如有任何疑問或緊急情況，請立即聯絡父母。</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -756,7 +835,7 @@
 
         <!-- Quiz Link Button -->
         <div class="text-center mt-12 mb-8">
-            <a href="quiz.html" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-green-600 transition duration-300 text-lg">
+            <a href="quiz.html" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-green-600 transition duration-300 text-lg font-heading">
                 <span class="lang-en">Take the Safety Quiz</span>
                 <span class="lang-zh block text-base mt-1">參加安全測驗</span>
             </a>
@@ -764,8 +843,8 @@
 
 
         <!-- Final Reminder -->
-        <div class="bg-blue-100 rounded-xl shadow-md p-8 mt-8 text-center">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4">
+        <div class="bg-white rounded-xl shadow-md p-8 mt-8 text-center">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 font-heading">
                 <span class="lang-en">Final Reminder</span>
                 <span class="lang-zh block text-xl mt-1 text-blue-700">最後提醒</span>
             </h2>
@@ -773,8 +852,8 @@
                 <span class="lang-en">We appreciate your help in caring for our baby! These rules are essential to ensure the baby's safety. If unsure about anything, always ask us first.</span>
                 <span class="lang-zh">感謝您照顧寶寶！這些規則是為了確保寶寶的安全。如有疑問，請務必詢問父母。</span>
             </p>
-            <div class="bg-white rounded-lg p-4 inline-block shadow-md">
-                <p class="text-blue-600 font-semibold"><i class="fas fa-heart mr-2"></i>
+            <div class="bg-white rounded-lg p-4 inline-block shadow-md border border-blue-100">
+                <p class="text-blue-600 font-semibold"><i class="fas fa-heart mr-2 text-red-500"></i>
                     <span class="lang-en">Your careful attention to these guidelines helps keep our baby safe and healthy!</span>
                     <span class="lang-zh">您對這些守則的細心關注有助於保持寶寶的安全與健康！</span>
                 </p>
@@ -787,7 +866,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold mb-2">
+                    <h3 class="text-xl font-bold mb-2 font-heading">
                         <span class="lang-en">Newborn Care Safety</span>
                         <span class="lang-zh block text-lg font-normal mt-1 text-blue-100">嬰兒照護守則</span>
                     </h3>
@@ -807,8 +886,8 @@
             </div>
             <div class="border-t border-blue-700 mt-6 pt-6 text-center text-blue-200">
                 <p>
-                    <span class="lang-en">Last updated: June 2023 | For any questions, please contact the parents</span>
-                    <span class="lang-zh block text-sm mt-1 text-blue-100">最後更新：2023年6月 | 如有任何疑問，請聯絡父母</span>
+                    <span class="lang-en">Last updated: April 2025 | For any questions, please contact the parents</span>
+                    <span class="lang-zh block text-sm mt-1 text-blue-100">最後更新：2025年4月 | 如有任何疑問，請聯絡父母</span>
                 </p>
             </div>
         </div>

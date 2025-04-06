@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Lucas's Lookout | 玩「Lucas的守望」遊戲</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Nunito', sans-serif;
+        }
+        .lang-zh {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.95em;
+        }
+        /* Optional: Style the iframe container */
+        .game-container iframe {
+            max-width: 100%; /* Ensure iframe is responsive */
+            border: 1px solid #d1d5db; /* gray-300 border */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+        }
+        .font-sans {
+             font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-gamepad text-4xl mr-4"></i> <!-- Changed icon -->
+                    <div>
+                        <h1 class="text-3xl font-bold font-heading">
+                            <span class="lang-en">Play Lucas's Lookout</span>
+                            <span class="lang-zh block text-xl mt-1 text-blue-100">玩「Lucas的守望」遊戲</span>
+                        </h1>
+                        <p class="text-blue-100">
+                            <span class="lang-en">Test your caregiver skills!</span>
+                            <span class="lang-zh block text-sm text-blue-100">測試您的照顧者技能！</span>
+                        </p>
+                    </div>
+                </div>
+                 <a href="index.html" class="text-blue-100 hover:text-white transition font-medium">
+                     <i class="fas fa-arrow-left mr-2"></i>
+                    <span class="lang-en">Back to Guidelines</span>
+                    <span class="lang-zh">返回守則</span>
+                 </a>
+            </div>
+        </div>
+    </header>
+
+     <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center font-heading">
+             <span class="lang-en">Lucas's Lookout Game</span>
+             <span class="lang-zh block text-2xl mt-1 text-blue-700">「Lucas的守望」遊戲</span>
+        </h2>
+
+        <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md mb-8">
+            <p class="text-gray-700 mb-6 text-center">
+                <span class="lang-en">Put your baby safety knowledge to the test! Help keep Lucas safe from common household hazards as he crawls around. Tap hazards to fix them or tap Lucas to change his direction. Good luck!</span>
+                <span class="lang-zh">將您的嬰兒安全知識付諸實踐吧！幫助 Lucas 在爬行時遠離常見的家居危險。點擊危險物來修復它們，或點擊 Lucas 來改變他的方向。祝您好運！</span>
+            </p>
+
+            <!-- iFrame Container -->
+            <div class="game-container my-8 text-center">
+                <iframe id="unity-game-frame"
+                        src="https://play.unity.com/en/games/4dff5101-2a7f-4521-a1d2-43d9dba565d9/lucas-lookout"
+                        width="960"  
+                        height="600" 
+                        frameborder="0"
+                        scrolling="no"
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="text-center text-gray-600 text-sm mt-4">
+                <span class="lang-en">Loading Lucas's Lookout... Ensure you have a stable internet connection. The game is best played on desktop browsers.</span>
+                <span class="lang-zh">正在載入「Lucas的守望」... 請確保您的網路連線穩定。建議使用桌面瀏覽器以獲得最佳遊戲體驗。</span>
+            </p>
+            <p class="text-center text-gray-600 text-sm mt-2">
+                <span class="lang-en">If you encounter issues, try reloading the page or using a different browser like Chrome or Firefox.</span>
+                 <span class="lang-zh">如果遇到問題，請嘗試重新載入頁面或使用其他瀏覽器（如 Chrome 或 Firefox）。</span>
+            </p>
+
+        </div>
+
+        <!-- Link back to Quiz or Guidelines -->
+         <div class="text-center mt-10">
+            <a href="quiz.html" class="inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition duration-300 text-lg font-heading mr-4">
+                <i class="fas fa-clipboard-list mr-2"></i>
+                <span class="lang-en">Take the Quiz</span>
+                <span class="lang-zh">參加測驗</span>
+            </a>
+             <a href="index.html" class="inline-block bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 text-lg font-heading">
+                 <i class="fas fa-book-open mr-2"></i>
+                <span class="lang-en">Review Guidelines</span>
+                <span class="lang-zh">查看守則</span>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+     <footer class="bg-blue-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center text-blue-200">
+             <p>
+                <span class="lang-en">Remember to always prioritize the baby's safety in real life!</span>
+                <span class="lang-zh block text-sm mt-1">請謹記在現實生活中時刻將寶寶的安全放在首位！</span>
+            </p>
+             <p class="mt-2">
+                <a href="index.html" class="hover:text-white underline font-medium">
+                    <span class="lang-en">Review Guidelines</span>
+                    <span class="lang-zh"> / 重新查看守則</span>
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Note: No specific JS needed for this page unless adding more interactions -->
+
+</body>
+</html>

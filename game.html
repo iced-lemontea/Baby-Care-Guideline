@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Lucas's Lookout | 玩「Lucas的守望」遊戲</title>
+    <title>Lucas's Lookout Game | 嬰兒照護遊戲</title> <!-- Updated Title -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,16 +23,57 @@
             margin-top: 0.25rem;
             font-size: 0.95em;
         }
-        /* Optional: Style the iframe container */
-        .game-container iframe {
-            max-width: 100%; /* Ensure iframe is responsive */
-            border: 1px solid #d1d5db; /* gray-300 border */
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
-        }
+        /* Ensure body font overrides Tailwind default */
         .font-sans {
              font-family: 'Inter', sans-serif;
         }
+        /* Basic container styling for content blocks */
+        .content-block {
+            background-color: white;
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            margin-bottom: 2rem; /* mb-8 */
+        }
+        .content-block h3 {
+             font-size: 1.25rem; /* text-xl */
+             font-weight: 600; /* font-semibold */
+             color: #2c5282; /* text-blue-800 */
+             margin-bottom: 1rem; /* mb-4 */
+             display: flex;
+             align-items: center;
+        }
+        .content-block h3 i {
+             margin-right: 0.75rem; /* mr-3 */
+             color: #4299e1; /* text-blue-500 */
+        }
+        .content-block p, .content-block li {
+            color: #4a5568; /* text-gray-700 */
+            line-height: 1.6;
+        }
+         .content-block ul {
+             list-style: disc;
+             padding-left: 1.5rem; /* pl-6 */
+             margin-top: 0.5rem; /* mt-2 */
+         }
+         .play-button {
+             display: inline-block;
+             background-color: #38a169; /* bg-green-600 */
+             color: white;
+             font-weight: bold;
+             padding: 0.75rem 2rem; /* py-3 px-8 */
+             border-radius: 0.5rem; /* rounded-lg */
+             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+             transition: background-color 0.3s;
+             text-decoration: none;
+             margin-top: 1.5rem; /* mt-6 */
+             font-family: 'Nunito', sans-serif; /* font-heading */
+             font-size: 1.125rem; /* text-lg */
+         }
+         .play-button:hover {
+             background-color: #2f855a; /* bg-green-700 */
+         }
+
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -41,15 +82,15 @@
         <div class="container mx-auto px-4 py-8">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="flex items-center mb-4 md:mb-0">
-                    <i class="fas fa-gamepad text-4xl mr-4"></i> <!-- Changed icon -->
+                    <i class="fas fa-gamepad text-4xl mr-4"></i> <!-- Changed Icon -->
                     <div>
                         <h1 class="text-3xl font-bold font-heading">
-                            <span class="lang-en">Play Lucas's Lookout</span>
-                            <span class="lang-zh block text-xl mt-1 text-blue-100">玩「Lucas的守望」遊戲</span>
+                            <span class="lang-en">Lucas's Lookout Game</span>
+                            <span class="lang-zh block text-xl mt-1 text-blue-100">Lucas的安全守望遊戲</span> <!-- Updated ZH Title -->
                         </h1>
                         <p class="text-blue-100">
-                            <span class="lang-en">Test your caregiver skills!</span>
-                            <span class="lang-zh block text-sm text-blue-100">測試您的照顧者技能！</span>
+                            <span class="lang-en">Tap Fast, Stay Alert, Keep Lucas Safe!</span>
+                            <span class="lang-zh block text-sm text-blue-100">快速點擊，保持警惕，保護Lucas安全！</span> <!-- Tagline ZH -->
                         </p>
                     </div>
                 </div>
@@ -64,73 +105,154 @@
 
      <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center font-heading">
-             <span class="lang-en">Lucas's Lookout Game</span>
-             <span class="lang-zh block text-2xl mt-1 text-blue-700">「Lucas的守望」遊戲</span>
+        <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center font-heading">
+             <span class="lang-en">Learn Baby Safety Through Play!</span>
+             <span class="lang-zh block text-2xl mt-1 text-blue-700">從遊戲中學習嬰兒安全！</span>
         </h2>
 
-        <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-md mb-8">
-            <p class="text-gray-700 mb-6 text-center">
-                <span class="lang-en">Put your baby safety knowledge to the test! Help keep Lucas safe from common household hazards as he crawls around. Tap hazards to fix them or tap Lucas to change his direction. Good luck!</span>
-                <span class="lang-zh">將您的嬰兒安全知識付諸實踐吧！幫助 Lucas 在爬行時遠離常見的家居危險。點擊危險物來修復它們，或點擊 Lucas 來改變他的方向。祝您好運！</span>
+        <!-- Concept Overview -->
+        <div class="content-block">
+            <h3><i class="fas fa-info-circle"></i><span class="lang-en">Concept Overview</span><span class="lang-zh">遊戲概念</span></h3>
+            <p>
+                <span class="lang-en">Welcome to Lucas's Lookout! Get ready for a fast-paced and fun game where you step into the important role of Lucas's caregiver. Little Lucas is a curious and speedy crawler, exploring his home with wide-eyed wonder. Your mission? To keep him safe from everyday household hazards that pop up along his path. It's a game of quick reflexes, sharp eyes, and learning essential baby safety tips along the way!</span>
+                <span class="lang-zh">歡迎來到 Lucas's Lookout！準備好迎接這款快節奏又有趣的遊戲，您將扮演Lucas重要的照顧者角色。小Lucas是個好奇又爬得飛快的寶寶，正睜大眼睛探索他的家。您的任務？保護他遠離路上出現的日常家居危險。這是一款考驗快速反應、敏銳觀察力，並在過程中學習重要嬰兒安全提示的遊戲！</span>
             </p>
-
-            <!-- iFrame Container -->
-            <div class="game-container my-8 text-center">
-                <iframe id="unity-game-frame"
-                        src="https://play.unity.com/en/games/4dff5101-2a7f-4521-a1d2-43d9dba565d9/lucas-lookout"
-                        width="960"  
-                        height="600" 
-                        frameborder="0"
-                        scrolling="no"
-                        allowfullscreen>
-                </iframe>
-            </div>
-
-            <p class="text-center text-gray-600 text-sm mt-4">
-                <span class="lang-en">Loading Lucas's Lookout... Ensure you have a stable internet connection. The game is best played on desktop browsers.</span>
-                <span class="lang-zh">正在載入「Lucas的守望」... 請確保您的網路連線穩定。建議使用桌面瀏覽器以獲得最佳遊戲體驗。</span>
-            </p>
-            <p class="text-center text-gray-600 text-sm mt-2">
-                <span class="lang-en">If you encounter issues, try reloading the page or using a different browser like Chrome or Firefox.</span>
-                 <span class="lang-zh">如果遇到問題，請嘗試重新載入頁面或使用其他瀏覽器（如 Chrome 或 Firefox）。</span>
-            </p>
-
         </div>
 
-        <!-- Link back to Quiz or Guidelines -->
-         <div class="text-center mt-10">
-            <a href="quiz.html" class="inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-green-600 transition duration-300 text-lg font-heading mr-4">
-                <i class="fas fa-clipboard-list mr-2"></i>
-                <span class="lang-en">Take the Quiz</span>
-                <span class="lang-zh">參加測驗</span>
+        <!-- How to Play -->
+        <div class="content-block">
+            <h3><i class="fas fa-gamepad"></i><span class="lang-en">How to Play</span><span class="lang-zh">遊戲玩法</span></h3>
+            <p>
+                <span class="lang-en">Keeping Lucas safe is all about quick thinking and tapping!</span>
+                <span class="lang-zh">保護Lucas的關鍵在於快速思考和點擊！</span>
+            </p>
+            <ul class="list-disc pl-6 mt-4 space-y-2">
+                <li>
+                    <span class="lang-en"><strong>Lucas Crawls:</strong> Lucas will start crawling automatically across different rooms in the house.</span>
+                    <span class="lang-zh"><strong>Lucas爬行：</strong> Lucas會自動在家中不同房間爬行。</span>
+                </li>
+                 <li>
+                    <span class="lang-en"><strong>Hazards Appear:</strong> Watch out! Dangers will appear in his path. Some you can fix, others you need to help him avoid.</span>
+                    <span class="lang-zh"><strong>危險出現：</strong> 小心！危險會出現在他的路上。有些您可以解決，有些則需要幫助他避開。</span>
+                </li>
+                 <li>
+                    <span class="lang-en"><strong>Fixable Hazards:</strong> Tap directly on the <strong>Hazard</strong> (like an open outlet or small object) to make it safe.</span>
+                    <span class="lang-zh"><strong>可解決的危險：</strong> 直接點擊<strong>危險物</strong>（如未遮蓋的插座或小物件）使其安全。</span>
+                </li>
+                 <li>
+                    <span class="lang-en"><strong>Temporary Hazards:</strong> These disappear on their own (like a hot mug or spill). Tap directly on <strong>Lucas</strong> to distract him and change his direction to avoid these.</span>
+                    <span class="lang-zh"><strong>暫時性危險：</strong> 這些危險會自行消失（如低處的熱杯子或潑灑物）。直接點擊<strong>Lucas</strong>來分散他的注意力，改變他的方向以避開。</span>
+                </li>
+                 <li>
+                    <span class="lang-en"><strong>Quick Taps:</strong> You have a very short cooldown (0.3-0.5s) after tapping Lucas, so time your distractions carefully!</span>
+                    <span class="lang-zh"><strong>快速點擊：</strong> 點擊Lucas後有很短的冷卻時間（0.3-0.5秒），所以要仔細掌握分散注意力的時機！</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Meet Lucas -->
+        <div class="content-block">
+            <h3><i class="fas fa-baby"></i><span class="lang-en">Meet Lucas</span><span class="lang-zh">認識Lucas</span></h3>
+            <p>
+                <span class="lang-en">Lucas is our adorable star! He's just learned to crawl and loves exploring. He's quick, curious, and heads towards interesting things... which are sometimes dangerous! His safety depends on your watchful eye and speedy taps. Can you keep up with him?</span>
+                <span class="lang-zh">Lucas是我們可愛的主角！他剛學會爬行，熱愛探索。他動作快、好奇心強，而且會朝著有趣的東西前進……而這些東西有時很危險！他的安全取決於您警惕的目光和快速的點擊。您能跟上他的步伐嗎？</span>
+            </p>
+        </div>
+
+        <!-- Hazards Ahead -->
+         <div class="content-block">
+            <h3><i class="fas fa-exclamation-triangle"></i><span class="lang-en">Watch Out! Hazards Ahead</span><span class="lang-zh">注意！前方危險</span></h3>
+            <p>
+                <span class="lang-en">The house is full of things Lucas might get into! Keep an eye out for:</span>
+                <span class="lang-zh">家中充滿了Lucas可能會接觸到的東西！請留意：</span>
+            </p>
+             <ul class="list-disc pl-6 mt-4 space-y-2">
+                 <li>
+                    <span class="lang-en"><strong>Fixable Dangers:</strong> Uncovered electrical outlets, dropped coins or buttons, plastic bags, dangling cords, open low cabinets. (Tap these!)</span>
+                    <span class="lang-zh"><strong>可解決的危險：</strong> 未遮蓋的插座、掉落的硬幣或鈕扣、塑膠袋、懸垂的繩線、敞開的低矮櫥櫃。（點擊這些！）</span>
+                </li>
+                <li>
+                    <span class="lang-en"><strong>Temporary Dangers:</strong> Hot mugs/food left low, spills, pets moving, rolling toys. (Tap Lucas to avoid these!)</span>
+                    <span class="lang-zh"><strong>暫時性危險：</strong> 低處的熱杯/食物、潑灑物、移動的寵物、滾動的玩具。（點擊Lucas避開這些！）</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Explore the Home -->
+         <div class="content-block">
+            <h3><i class="fas fa-map-signs"></i><span class="lang-en">Explore the Home</span><span class="lang-zh">探索家中環境</span></h3>
+            <p>
+                <span class="lang-en">Guide Lucas safely through 5 different areas of the home, each with its own unique challenges:</span>
+                <span class="lang-zh">安全地引導Lucas通過家中的5個不同區域，每個區域都有其獨特的挑戰：</span>
+            </p>
+            <ul class="list-disc pl-6 mt-4 space-y-1">
+                <li><span class="lang-en">Living Room</span><span class="lang-zh">客廳</span></li>
+                <li><span class="lang-en">Kitchen</span><span class="lang-zh">廚房</span></li>
+                <li><span class="lang-en">Nursery</span><span class="lang-zh">嬰兒房</span></li>
+                <li><span class="lang-en">Bathroom</span><span class="lang-zh">浴室</span></li>
+                <li><span class="lang-en">Hallway/Stairs</span><span class="lang-zh">走廊/樓梯</span></li>
+            </ul>
+        </div>
+
+        <!-- Test Your Reflexes -->
+        <div class="content-block">
+            <h3><i class="fas fa-tachometer-alt"></i><span class="lang-en">Test Your Reflexes</span><span class="lang-zh">測試您的反應</span></h3>
+            <p>
+                <span class="lang-en">Things start simple, but the challenge grows! Expect Lucas to get faster, more hazards to appear, and less time to react as you progress through the levels. Stay focused!</span>
+                <span class="lang-zh">遊戲開始時很簡單，但挑戰會逐漸增加！隨著關卡的推進，預計Lucas會爬得更快，出現更多危險，反應時間也會縮短。保持專注！</span>
+            </p>
+        </div>
+
+        <!-- Learn While You Play -->
+        <div class="content-block">
+            <h3><i class="fas fa-graduation-cap"></i><span class="lang-en">Learn While You Play</span><span class="lang-zh">邊玩邊學</span></h3>
+            <p>
+                <span class="lang-en">Lucas's Lookout isn't just fun, it's a great way to reinforce baby safety knowledge! See safety tips on loading screens, learn hazard awareness, and access an in-game summary of key points.</span>
+                <span class="lang-zh">Lucas's Lookout 不僅有趣，更是鞏固嬰兒安全知識的好方法！在載入畫面查看安全提示，學習危險意識，並可隨時查閱遊戲內涵蓋的關鍵要點摘要。</span>
+            </p>
+        </div>
+
+         <!-- Play Now Button -->
+        <div class="text-center mt-12 mb-8">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 font-heading">
+                <span class="lang-en">Ready to Play?</span>
+                <span class="lang-zh">準備好開始玩了嗎？</span>
+            </h2>
+            <p class="text-gray-600 mb-6 max-w-xl mx-auto">
+                <span class="lang-en">Click the button below to play Lucas's Lookout directly in your browser via Unity Play!</span>
+                <span class="lang-zh">點擊下方按鈕，即可透過 Unity Play 直接在瀏覽器中玩 Lucas's Lookout！</span>
+            </p>
+            <a href="https://play.unity.com/en/games/4dff5101-2a7f-4521-a1d2-43d9dba565d9/lucas-lookout"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="play-button">
+                <i class="fas fa-play mr-2"></i>
+                <span class="lang-en">Play Lucas's Lookout Now!</span>
+                <span class="lang-zh">立即玩 Lucas's Lookout！</span>
             </a>
-             <a href="index.html" class="inline-block bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 text-lg font-heading">
-                 <i class="fas fa-book-open mr-2"></i>
-                <span class="lang-en">Review Guidelines</span>
-                <span class="lang-zh">查看守則</span>
-            </a>
+            <p class="text-sm text-gray-500 mt-4">
+                <span class="lang-en">(Opens in a new tab)</span>
+                <span class="lang-zh">（將在新分頁中開啟）</span>
+            </p>
         </div>
 
     </main>
 
     <!-- Footer -->
-     <footer class="bg-blue-800 text-white py-8 mt-16">
+    <footer class="bg-blue-800 text-white py-8 mt-16">
         <div class="container mx-auto px-4 text-center text-blue-200">
              <p>
-                <span class="lang-en">Remember to always prioritize the baby's safety in real life!</span>
-                <span class="lang-zh block text-sm mt-1">請謹記在現實生活中時刻將寶寶的安全放在首位！</span>
+                <span class="lang-en">Play safe, learn safe!</span>
+                <span class="lang-zh block text-sm mt-1">安全遊戲，學習安全！</span>
             </p>
              <p class="mt-2">
                 <a href="index.html" class="hover:text-white underline font-medium">
-                    <span class="lang-en">Review Guidelines</span>
-                    <span class="lang-zh"> / 重新查看守則</span>
+                    <span class="lang-en">Review Safety Guidelines</span>
+                    <span class="lang-zh"> / 查看安全守則</span>
                 </a>
             </p>
         </div>
     </footer>
-
-    <!-- Note: No specific JS needed for this page unless adding more interactions -->
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Lucas's Lookout | Newborn Care Safety</title> <!-- Updated Title -->
+    <title>Play Lucas's Lookout | Newborn Care Safety</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,47 +15,77 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
         h1, h2, h3, h4, h5, h6, .font-heading {
             font-family: 'Nunito', sans-serif;
         }
-
-        .lang-zh {
+        .lang-zh { /* Keep for header/footer consistency */
             display: block;
             margin-top: 0.25rem;
             font-size: 0.95em;
         }
-
         .font-sans {
-            font-family: 'Inter', sans-serif;
+             font-family: 'Inter', sans-serif;
         }
 
-        /* Responsive Game Container using Aspect Ratio Padding Trick */
+        /* Responsive Game Container */
         .game-wrapper {
             position: relative;
             overflow: hidden;
             width: 100%;
-            max-width: 960px; /* Optional: Set a max-width */
-            margin: 20px auto; /* Center the container */
-            /* Adjust padding-top percentage based on game aspect ratio (height / width * 100) */
-            /* Example for 960x600 = 62.5% */
-            /* Example for 1920x1080 (16:9) = 56.25% */
-            padding-top: 62.5%; /* Defaulting to 16:10 ratio (960x600) - CHANGE IF NEEDED */
-            background-color: #000; /* Optional: background while loading */
-            border: 1px solid #ccc; /* Optional: border */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: shadow */
+            max-width: 960px; /* Adjust as needed */
+            margin: 30px auto; /* Increased top margin */
+            padding-top: 62.5%; /* Adjust based on game aspect ratio (height / width * 100) */
+            background-color: #000;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-            .game-wrapper iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                width: 100%;
-                height: 100%;
-                border: none; /* Remove iframe border */
-            }
+        .game-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Styling for game info sections */
+        .game-info-section {
+            max-width: 800px; /* Limit width for readability */
+            margin: 0 auto 2rem auto; /* Center and add bottom margin */
+            padding: 1rem;
+            background-color: #ffffff; /* White background for info */
+            border-radius: 0.5rem; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+        }
+        .game-info-section h3 {
+            font-family: 'Nunito', sans-serif; /* Ensure heading font */
+            color: #1d4ed8; /* blue-700 */
+            margin-bottom: 0.75rem;
+        }
+        .game-info-section p, .game-info-section li {
+            color: #374151; /* gray-700 */
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        .game-info-section ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+         .game-info-section ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+             margin-bottom: 1rem;
+        }
+         .game-info-section strong {
+             font-weight: 600;
+             color: #1f2937; /* gray-800 */
+         }
+
+
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -71,37 +101,71 @@
                             <span class="lang-zh block text-xl mt-1 text-blue-100">嬰兒照護守則</span>
                         </h1>
                         <p class="text-blue-100">
-                            <span class="lang-en">Play the Safety Game!</span> <!-- Updated Subtitle -->
-                            <span class="lang-zh block text-sm text-blue-100">玩安全遊戲！</span> <!-- Updated Subtitle -->
+                            <span class="lang-en">Play the Safety Game!</span>
+                            <span class="lang-zh block text-sm text-blue-100">玩安全遊戲！</span>
                         </p>
                     </div>
                 </div>
-                <!-- Link back to the main guidelines page -->
-                <a href="index.html" class="text-blue-100 hover:text-white transition font-medium">
-                    <i class="fas fa-arrow-left mr-2"></i>
+                 <a href="index.html" class="text-blue-100 hover:text-white transition font-medium">
+                     <i class="fas fa-arrow-left mr-2"></i>
                     <span class="lang-en">Back to Guidelines</span>
                     <span class="lang-zh">返回守則</span>
-                </a>
+                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
+     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center font-heading">
-            <span class="lang-en">Play Lucas's Lookout!</span>
-            <span class="lang-zh block text-2xl mt-1 text-blue-700">玩 Lucas's Lookout 遊戲！</span>
+        <h2 class="text-3xl font-bold text-blue-800 mb-8 text-center font-heading">
+             <i class="fas fa-gamepad mr-2"></i>Lucas's Lookout!
         </h2>
 
-        <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-            <span class="lang-en">Test your baby safety knowledge and reflexes in this fun game. Keep Lucas safe from household hazards!</span>
-            <span class="lang-zh">在這個有趣的遊戲中測試您的嬰兒安全知識和反應能力。保護Lucas免受家庭危險！</span>
-        </p>
+        <!-- Game Introduction Section -->
+        <div class="game-info-section">
+            <h3 class="text-2xl font-semibold">About The Game</h3>
+            <p>
+                Uh oh! Little Lucas has just learned to crawl, and the whole house is his new playground! He's speedy, curious, and naturally drawn to interesting things... which aren't always safe.
+            </p>
+            <p>
+                <strong>Lucas's Lookout</strong> is a fast-paced, reaction-based game where you take on the vital role of Lucas's caregiver. Your mission is to keep him safe from everyday household hazards as he explores different rooms. Can you keep up with his adventures?
+            </p>
+        </div>
+
+        <!-- Gameplay Section -->
+        <div class="game-info-section">
+             <h3 class="text-2xl font-semibold">Gameplay</h3>
+             <p>The goal is simple but challenging: keep Lucas away from dangers!</p>
+             <ol>
+                <li><strong>Watch Lucas:</strong> He crawls automatically across the screen.</li>
+                <li><strong>Spot Hazards:</strong> Dangers appear in his path. Pay close attention!</li>
+                <li><strong>React Quickly:</strong> Identify the hazard type:
+                    <ul>
+                        <li><strong>Fixable Hazard?</strong> (Electricity Outlet, coin, plastic bag, etc.) => <strong>Double TAP THE HAZARD</strong> itself to remove it.</li>
+                        <li><strong>Temporary Hazard?</strong> (Kitchen knife, clothes iron, etc.) => <strong>TAP LUCAS</strong> to distract him and make him change direction. (Watch out for the brief cooldown after tapping Lucas!)</li>
+                    </ul>
+                </li>
+                <li><strong>Survive:</strong> Keep Lucas safe for <strong>20 seconds</strong> in each level to win!</li>
+             </ol>
+        </div>
+
+        <!-- Features Section -->
+        <div class="game-info-section">
+             <h3 class="text-2xl font-semibold">Features</h3>
+             <ul>
+                <li><strong>5 Challenging Levels:</strong> Guide Lucas safely through the Living Room, Kitchen, Nursery, Hallway and Bathroom.</li>
+                <li><strong>Varied Hazards:</strong> Learn to handle both neutralizable and temporary dangers.</li>
+                <li><strong>Fast-Paced Action:</strong> Test your reflexes and observation skills.</li>
+                <li><strong>Increasing Difficulty!</strong></li>
+                <li><strong>Educational:</strong> Reinforces common baby safety awareness points in a fun way.</li>
+                <li><strong>Win Condition:</strong> Complete all 5 levels to win!</li>
+             </ul>
+        </div>
 
         <!-- Responsive Game Container -->
         <div class="game-wrapper">
-            <iframe id="unity-game-frame"
-                    src="https://iced-lemontea.github.io/LucasLookout/" <!-- *** REPLACE THIS with the URL of your HOSTED WebGL build (e.g., your GitHub Pages URL) *** -->
+             <iframe id="unity-game-frame"
+                    src="https://iced-lemontea.github.io/LucasLookout/" <!-- *** CONFIRM THIS is the correct deployed URL *** -->
                     frameborder="0"
                     scrolling="no"
                     allowfullscreen>
@@ -109,13 +173,14 @@
         </div>
 
         <p class="text-center text-sm text-gray-500 mt-4">
-            <span class="lang-en">Loading game... Please ensure your browser supports WebGL. Use fullscreen for the best experience.</span>
-            <span class="lang-zh">遊戲載入中... 請確保您的瀏覽器支援 WebGL。使用全螢幕以獲得最佳體驗。</span>
+            <span class="lang-en">Loading game... Please ensure your browser supports WebGL. Use fullscreen <i class="fas fa-expand ml-1"></i> for the best experience.</span>
+            <span class="lang-zh">遊戲載入中... 請確保您的瀏覽器支援 WebGL。使用全螢幕 <i class="fas fa-expand ml-1"></i> 以獲得最佳體驗。</span>
         </p>
 
         <!-- Optional: Link to Quiz -->
-        <div class="text-center mt-12 mb-8">
+         <div class="text-center mt-12 mb-8">
             <a href="quiz.html" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-green-600 transition duration-300 text-lg font-heading">
+                <i class="fas fa-clipboard-list mr-2"></i> <!-- Added Icon -->
                 <span class="lang-en">Take the Safety Quiz</span>
                 <span class="lang-zh block text-base mt-1">參加安全測驗</span>
             </a>
@@ -126,26 +191,24 @@
     <!-- Footer -->
     <footer class="bg-blue-800 text-white py-8 mt-16">
         <div class="container mx-auto px-4 text-center text-blue-200">
-            <p>
+             <p>
                 <span class="lang-en">Have fun playing and stay safe!</span>
                 <span class="lang-zh block text-sm mt-1">玩得開心並注意安全！</span>
             </p>
-            <p class="mt-2">
+             <p class="mt-2">
                 <a href="index.html" class="hover:text-white underline font-medium">
                     <span class="lang-en">Review Guidelines</span>
                     <span class="lang-zh"> / 重新查看守則</span>
                 </a>
             </p>
             <div class="border-t border-blue-700 mt-6 pt-6 text-center text-blue-200">
-                <p>
+                 <p>
                     <span class="lang-en">Last updated: April 2025 | For any questions, please feel free to contact the parents</span>
                     <span class="lang-zh block text-sm mt-1 text-blue-100">最後更新：2025年4月 | 如有任何疑問，請隨時聯絡父母</span>
                 </p>
             </div>
         </div>
     </footer>
-
-    <!-- No Accordion or Floating Button JS needed here -->
 
 </body>
 </html>

@@ -21,7 +21,6 @@
         .lang-zh {
             display: block;
             margin-top: 0.25rem;
-            /* Removed default color: inherits from parent */
             font-size: 0.95em;
         }
         .question-feedback {
@@ -126,7 +125,11 @@
         </h2>
 
         <form id="quiz-form" class="max-w-3xl mx-auto">
-            <!-- Question 1 (True) -->
+            <!-- Questions 1-10 -->
+            <!-- (Keep all 10 question blocks exactly as they were in the previous version) -->
+            <!-- ... [Question blocks 1 through 10 remain here] ... -->
+
+             <!-- Question 1 (True) -->
             <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
                 <p class="font-bold text-lg mb-3 font-heading">
                     <span class="lang-en">Question 1</span> <span class="lang-zh">問題 1</span>
@@ -366,6 +369,7 @@
                 <div id="feedback-q10" class="question-feedback"></div>
             </div>
 
+
             <!-- Submit Button -->
              <div class="text-center mt-8">
                 <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 text-lg font-heading">
@@ -394,6 +398,12 @@
                     <span class="lang-en">Review Guidelines</span>
                     <span class="lang-zh"> / 重新查看守則</span>
                 </a>
+                 <!-- Added pipe separator and link to game -->
+                <span class="mx-2">|</span>
+                 <a href="game.html" class="hover:text-white underline font-medium">
+                    <span class="lang-en">Play Game</span>
+                    <span class="lang-zh"> / 玩遊戲</span>
+                </a>
             </p>
         </div>
     </footer>
@@ -417,9 +427,9 @@
             // Clear previous feedback and styles
             for (let i = 1; i <= totalQuestions; i++) {
                 const feedbackEl = document.getElementById(`feedback-q${i}`);
-                const questionBox = feedbackEl?.closest('.mb-8'); // Use optional chaining
+                const questionBox = feedbackEl?.closest('.mb-8');
                 if(feedbackEl) feedbackEl.innerHTML = '';
-                if (questionBox) questionBox.classList.remove('ring-2', 'ring-offset-1', 'ring-red-500'); // Clear question box highlight
+                if (questionBox) questionBox.classList.remove('ring-2', 'ring-offset-1', 'ring-red-500');
 
                 document.querySelectorAll(`input[name="q${i}"]`).forEach(radio => {
                     const label = radio.closest('.radio-label');
@@ -436,8 +446,8 @@
                 const correctAnswer = correctAnswers[questionName];
                 const feedbackEl = document.getElementById(`feedback-${questionName}`);
                 const radio = document.querySelector(`input[name="${questionName}"][value="${selectedAnswer}"]`);
-                const radioLabel = radio?.closest('.radio-label'); // Use optional chaining
-                const questionBox = feedbackEl?.closest('.mb-8'); // Use optional chaining
+                const radioLabel = radio?.closest('.radio-label');
+                const questionBox = feedbackEl?.closest('.mb-8');
 
 
                  if (selectedAnswer) {
@@ -449,20 +459,17 @@
                          if(radioLabel) radioLabel.classList.add('bg-green-100', 'border-green-300');
                     } else {
                         if (feedbackEl) {
-                             // MODIFIED Incorrect Answer Feedback Tone
                              feedbackEl.innerHTML = `<span class="incorrect"><i class="fas fa-times mr-1"></i> <span class="lang-en">Not quite. The correct answer is ${correctAnswer === 'true' ? 'True' : 'False'}.</span> <span class="lang-zh">不太正確。 正確答案是 ${correctAnswer === 'true' ? '是' : '否'}。</span></span>`;
                          }
                          if(radioLabel) {
                             radioLabel.classList.add('bg-red-100', 'border-red-300');
                             const correctRadioLabel = document.querySelector(`input[name="${questionName}"][value="${correctAnswer}"]`)?.closest('.radio-label');
                             if (correctRadioLabel) {
-                                // Highlight the correct answer slightly differently
                                 correctRadioLabel.classList.add('ring-2', 'ring-offset-1', 'ring-green-500');
                             }
                          }
                      }
                  } else {
-                     // Handle unanswered questions
                      if (feedbackEl) {
                          feedbackEl.innerHTML = `<span class="incorrect"><i class="fas fa-exclamation-circle mr-1"></i> <span class="lang-en">No answer selected.</span> <span class="lang-zh">未選擇答案。</span></span>`;
                           if (questionBox) questionBox.classList.add('ring-2', 'ring-offset-1', 'ring-red-500');
@@ -477,7 +484,6 @@
             let adviceZh = '';
             let resultsClasses = 'mt-12 p-6 rounded-lg shadow-md text-center ';
 
-            // MODIFIED Advice Tone based on score
             if (score === totalQuestions) {
                 adviceEn = "Excellent! You have a great understanding of the safety guidelines.";
                 adviceZh = "太棒了！您對安全守則有很好的理解。";
@@ -491,7 +497,6 @@
                 adviceZh = "建議您再次查閱守則，特別是您不太確定的部分，會很有幫助。每一個要點都有助於確保寶寶的安全！";
                  resultsClasses += 'bg-red-100 text-red-800';
             }
-            // END MODIFIED Advice Tone
 
             resultsDiv.className = resultsClasses;
             resultsDiv.innerHTML = `
@@ -503,17 +508,21 @@
                 <p>${adviceEn}<br><span class="lang-zh">${adviceZh}</span></p>
                  <div class="mt-6 flex flex-wrap justify-center gap-4">
                      <button onclick="window.scrollTo(0, 0); location.reload();" class="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg shadow hover:bg-blue-600 transition duration-300 font-heading">
-                        <span class="lang-en">Try Again</span><span class="lang-zh"> / 再試一次</span>
+                        <i class="fas fa-redo mr-2"></i> <span class="lang-en">Try Again</span><span class="lang-zh"> / 再試一次</span>
                      </button>
                      <a href="index.html" class="inline-block bg-gray-500 text-white font-bold py-2 px-6 rounded-lg shadow hover:bg-gray-600 transition duration-300 font-heading">
-                        <span class="lang-en">Back to Guidelines</span><span class="lang-zh"> / 返回守則</span>
+                        <i class="fas fa-book-open mr-2"></i> <span class="lang-en">Back to Guidelines</span><span class="lang-zh"> / 返回守則</span>
                      </a>
+                     <!-- Added Game Button -->
+                     <a href="game.html" class="inline-block bg-indigo-500 text-white font-bold py-2 px-6 rounded-lg shadow hover:bg-indigo-600 transition duration-300 font-heading">
+                        <i class="fas fa-gamepad mr-2"></i> <span class="lang-en">Play the Game</span><span class="lang-zh"> / 玩遊戲</span>
+                     </a>
+                     <!-- End Added Game Button -->
                 </div>
             `;
              resultsDiv.style.display = 'block';
-             // Scroll smoothly to results, accounting for header height potentially
-             const headerHeight = document.querySelector('header')?.offsetHeight || 60; // Estimate header height
-             const resultsTop = resultsDiv.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20; // Add some padding
+             const headerHeight = document.querySelector('header')?.offsetHeight || 60;
+             const resultsTop = resultsDiv.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
              window.scrollTo({ top: resultsTop, behavior: 'smooth' });
         });
     </script>

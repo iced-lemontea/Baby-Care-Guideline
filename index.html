@@ -21,12 +21,11 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-out; /* Keep transition reasonable */
+            transition: max-height 0.5s ease-out;
         }
         .accordion.active .accordion-content {
-            /* Increased max-height significantly to accommodate longer text */
-            max-height: 4000px;
-            transition: max-height 0.6s ease-in; /* Slightly longer transition for larger height */
+            max-height: 4000px; /* Increased max-height */
+            transition: max-height 0.7s ease-in;
         }
         .accordion.active .accordion-icon {
             transform: rotate(180deg);
@@ -93,10 +92,8 @@
                 <span class="lang-zh block text-2xl mt-1 text-blue-100">確保Lucas安全</span>
             </h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto">
-                 <!-- MODIFIED: Removed "precious" -->
                 <span class="lang-en">These guidelines ensure the health and safety of our newborn. Please read carefully and follow all instructions.</span>
                 <span class="lang-zh text-blue-100">本文件列出了確保寶寶安全與健康的基本規則。請詳細閱讀並嚴格遵守。</span>
-                <!-- END MODIFICATION -->
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                  <div class="bg-white bg-opacity-20 rounded-lg p-4 flex items-center flex-col md:flex-row text-center md:text-left">
@@ -147,16 +144,12 @@
                 <span class="lang-zh block text-xl mt-1 text-blue-700">歡迎照顧者</span>
             </h2>
             <p class="text-gray-700 mb-4">
-                <!-- MODIFIED Tone -->
                 <span class="lang-en">Thank you so much for helping care for Lucas! These guidelines are here to help ensure his safety and well-being at all times, and we truly appreciate your support.</span>
                 <span class="lang-zh">非常感謝您協助照顧Lucas！這些守則旨在協助確保他時刻安全與健康，我們衷心感謝您的支持。</span>
-                <!-- END MODIFICATION -->
             </p>
             <p class="text-gray-700 mb-4">
-                <!-- MODIFIED Tone -->
-                <span class="lang-en">Please take a moment to read through all the sections. We encourage you to follow these suggestions closely. If anything is unclear, or you have any questions at all, please don't hesitate to ask us first.</span>
-                <span class="lang-zh">請花些時間仔細閱讀所有部分。我們鼓勵您密切遵循這些建議。如果有任何不清楚或疑問之處，請隨時先向我們提出。</span>
-                <!-- END MODIFICATION -->
+                <span class="lang-en">Please take a moment to read through all the sections. We encourage you to follow these suggestions closely. If anything is unclear, or you have any questions at all, please don't hesitate to ask us first. <strong class="text-blue-600">We've also created a fun game to help practice these safety skills!</strong></span> <!-- Added mention of game -->
+                <span class="lang-zh">請花些時間仔細閱讀所有部分。我們鼓勵您密切遵循這些建議。如果有任何不清楚或疑問之處，請隨時先向我們提出。<strong class="text-blue-600">我們還製作了一個有趣的遊戲來幫助練習這些安全技巧！</strong></span> <!-- Added mention of game -->
             </p>
             <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
                 <p class="text-yellow-700 font-medium"><i class="fas fa-info-circle mr-2"></i>
@@ -168,7 +161,11 @@
 
         <!-- Guidelines Accordion -->
         <div class="space-y-4 bg-blue-50 p-4 md:p-6 rounded-xl shadow-inner">
-            <!-- Holding & Handling -->
+            <!-- Accordion Sections 1-10 -->
+            <!-- (Keep all 10 accordion sections exactly as they were in the previous version with the corrected tone and fixed accordion height) -->
+            <!-- ... [Accordion code for sections 1 through 10 remains here] ... -->
+
+             <!-- Holding & Handling -->
             <div class="accordion bg-white rounded-xl shadow-md overflow-hidden">
                 <button class="accordion-btn w-full flex justify-between items-center p-6 text-left">
                     <div class="flex items-center">
@@ -184,7 +181,6 @@
                 </button>
                 <div class="accordion-content">
                     <div class="px-6 pt-4 pb-6">
-                        <!-- MODIFIED Tone -->
                         <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -211,7 +207,7 @@
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
                                 <span>
                                     <span class="lang-en">To minimize germ exposure, it's best to avoid kissing Lucas on his face or hands for now.</span>
-                                    <span class="lang-zh">為了盡量減少病菌接觸，避免親吻Lucas的臉或手。</span>
+                                    <span class="lang-zh">為了盡量減少病菌接觸，目前最好避免親吻Lucas的臉或手。</span>
                                 </span>
                             </li>
                             <li class="flex items-start">
@@ -222,10 +218,9 @@
                                 </span>
                             </li>
                         </ul>
-                        <!-- END MODIFICATION -->
                         <div class="mt-4 bg-blue-50 rounded-lg p-4">
                             <p class="text-blue-700"><i class="fas fa-lightbulb mr-2"></i>
-                               <strong><span class="lang-en">Helpful Tip:</span><span class="lang-zh">溫馨提示：</span></strong> <!-- Tone softened -->
+                               <strong><span class="lang-en">Helpful Tip:</span><span class="lang-zh">溫馨提示：</span></strong>
                                <span class="lang-en">When picking Lucas up, sliding one hand under his head and neck, and the other under his bottom gives great support.</span>
                                <span class="lang-zh">抱起Lucas時，一手滑到頭頸下方，另一手托住臀部，可以提供很好的支撐。</span>
                             </p>
@@ -242,15 +237,14 @@
                             <i class="fas fa-bottle-droplet text-pink-600 text-2xl"></i>
                         </div>
                          <h3 class="text-xl font-semibold text-gray-800 font-heading">
-                            <span class="lang-en">2. Feeding Guidelines</span> <!-- Tone softened -->
-                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">2. 餵奶建議</span> <!-- Tone softened -->
+                            <span class="lang-en">2. Feeding Guidelines</span>
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">2. 餵奶建議</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
                 <div class="accordion-content">
                    <div class="px-6 pt-4 pb-6">
-                       <!-- MODIFIED Tone -->
                        <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -288,18 +282,17 @@
                                 </span>
                             </li>
                         </ul>
-                        <!-- END MODIFICATION -->
                          <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="bg-pink-50 rounded-lg p-4">
                                 <p class="text-pink-700 font-medium"><i class="fas fa-temperature-high mr-2"></i>
-                                    <strong><span class="lang-en">Milk Temperature Check:</span><span class="lang-zh">奶水溫度檢查：</span></strong><br> <!-- Tone softened -->
+                                    <strong><span class="lang-en">Milk Temperature Check:</span><span class="lang-zh">奶水溫度檢查：</span></strong><br>
                                     <span class="lang-en">Testing a drop on your wrist is a good way to check – it should feel comfortably warm, not hot.</span>
                                     <span class="lang-zh">在手腕內側滴一滴是個好方法——應感覺舒適溫暖，而不是燙。</span>
                                 </p>
                             </div>
                             <div class="bg-pink-50 rounded-lg p-4">
                                  <p class="text-pink-700 font-medium"><i class="fas fa-clock mr-2"></i>
-                                    <strong><span class="lang-en">Formula Storage Note:</span><span class="lang-zh">配方奶儲存提醒：</span></strong><br> <!-- Tone softened -->
+                                    <strong><span class="lang-en">Formula Storage Note:</span><span class="lang-zh">配方奶儲存提醒：</span></strong><br>
                                     <span class="lang-en">Prepared formula is best used within 1 hour. After that, it's recommended to discard it for safety.</span>
                                     <span class="lang-zh">泡好的配方奶最好在 1 小時內飲用完畢。為了安全起見，之後建議將其丟棄。</span>
                                 </p>
@@ -325,7 +318,6 @@
                 </button>
                 <div class="accordion-content">
                    <div class="px-6 pt-4 pb-6">
-                       <!-- MODIFIED Tone -->
                        <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -356,10 +348,9 @@
                                 </span>
                             </li>
                         </ul>
-                        <!-- END MODIFICATION -->
                         <div class="mt-6">
                             <h4 class="font-semibold text-gray-800 mb-3 font-heading">
-                                <span class="lang-en">Safe Sleep Environment Checklist:</span> <!-- Title slightly adjusted -->
+                                <span class="lang-en">Safe Sleep Environment Checklist:</span>
                                 <span class="lang-zh">安全睡眠環境檢查清單：</span>
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -406,7 +397,6 @@
                 </button>
                 <div class="accordion-content">
                     <div class="px-6 pt-4 pb-6">
-                        <!-- MODIFIED Tone -->
                         <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -430,25 +420,24 @@
                                 </span>
                             </li>
                         </ul>
-                        <!-- END MODIFICATION -->
                         <div class="mt-6">
                              <h4 class="font-semibold text-gray-800 mb-3 font-heading">
-                                 <span class="lang-en">Diaper Change Station Safety Notes:</span> <!-- Tone softened -->
+                                 <span class="lang-en">Diaper Change Station Safety Notes:</span>
                                  <span class="lang-zh">換尿布台安全提醒：</span>
                              </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-green-50 rounded-lg p-4">
                                     <p class="text-green-700"><i class="fas fa-hand-paper mr-2"></i>
-                                       <strong><span class="lang-en">Keep a Hand On Baby:</span><span class="lang-zh">手不離身：</span></strong><br> <!-- Tone softened -->
+                                       <strong><span class="lang-en">Keep a Hand On Baby:</span><span class="lang-zh">手不離身：</span></strong><br>
                                        <span class="lang-en">It's important to keep at least one hand gently on Lucas whenever he's on the changing table.</span>
                                        <span class="lang-zh">當Lucas在換尿布台上時，請務必隨時用至少一隻手輕輕護著他。</span>
                                     </p>
                                 </div>
                                 <div class="bg-green-50 rounded-lg p-4">
                                      <p class="text-green-700"><i class="fas fa-prescription-bottle text-green-700 mr-2"></i>
-                                        <strong><span class="lang-en">Diaper Rash Care:</span><span class="lang-zh">尿布疹護理：</span></strong><br> <!-- Title adjusted -->
-                                        <span class="lang-en">Use zinc oxide cream for redness. (Please let us know if a rash appears or doesn't improve).</span> <!-- Added reminder gently -->
-                                        <span class="lang-zh">如有紅疹可使用氧化鋅藥膏。（如果出現紅疹或沒有改善，請告知我們）。</span> <!-- Added reminder gently -->
+                                        <strong><span class="lang-en">Diaper Rash Care:</span><span class="lang-zh">尿布疹護理：</span></strong><br>
+                                        <span class="lang-en">Use zinc oxide cream for redness. (Please let us know if a rash appears or doesn't improve).</span>
+                                        <span class="lang-zh">如有紅疹可使用氧化鋅藥膏。（如果出現紅疹或沒有改善，請告知我們）。</span>
                                     </p>
                                 </div>
                             </div>
@@ -473,7 +462,6 @@
                 </button>
                 <div class="accordion-content">
                     <div class="px-6 pt-4 pb-6">
-                        <!-- MODIFIED Tone -->
                         <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -497,10 +485,9 @@
                                 </span>
                             </li>
                         </ul>
-                         <!-- END MODIFICATION -->
                         <div class="mt-4 bg-cyan-50 rounded-lg p-4">
                              <p class="text-cyan-700"><i class="fas fa-temperature-low mr-2"></i>
-                                <strong><span class="lang-en">Water Temp Guidance:</span><span class="lang-zh">水溫指引：</span></strong> <!-- Tone softened -->
+                                <strong><span class="lang-en">Water Temp Guidance:</span><span class="lang-zh">水溫指引：</span></strong>
                                 <span class="lang-en">Aiming for around 37-38°C (98.6-100.4°F) is usually comfortable. A bath thermometer can be helpful if you're unsure.</span>
                                 <span class="lang-zh">目標水溫約 37-38°C 通常很舒適。如果您不確定，洗澡溫度計會很有幫助。</span>
                             </p>
@@ -614,7 +601,6 @@
                 </button>
                  <div class="accordion-content">
                     <div class="px-6 pt-4 pb-6">
-                        <!-- MODIFIED Tone -->
                         <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -645,10 +631,9 @@
                                  </span>
                             </li>
                         </ul>
-                         <!-- END MODIFICATION -->
                         <div class="mt-6">
                             <h4 class="font-semibold text-gray-800 mb-3 font-heading">
-                                <span class="lang-en">Car Seat Quick Check:</span> <!-- Tone softened -->
+                                <span class="lang-en">Car Seat Quick Check:</span>
                                 <span class="lang-zh">安全座椅快速檢查：</span>
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -688,7 +673,6 @@
                 </button>
                 <div class="accordion-content">
                      <div class="px-6 pt-4 pb-6">
-                         <!-- MODIFIED Tone -->
                          <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -712,11 +696,10 @@
                                 </span>
                             </li>
                         </ul>
-                         <!-- END MODIFICATION -->
                         <div class="mt-6 bg-indigo-50 rounded-lg p-4">
                             <h4 class="font-semibold text-indigo-800 mb-2 font-heading">
                                 <i class="fas fa-child mr-2"></i>
-                                <span class="lang-en">Ideas for Playtime:</span> <!-- Tone softened -->
+                                <span class="lang-en">Ideas for Playtime:</span>
                                 <span class="lang-zh">遊戲時間建議：</span>
                             </h4>
                              <p class="text-indigo-700">
@@ -736,15 +719,14 @@
                             <i class="fas fa-users text-teal-600 text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-800 font-heading">
-                            <span class="lang-en">9. Visitors & Outings</span> <!-- Tone softened -->
-                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">9. 訪客與外出建議</span> <!-- Tone softened -->
+                            <span class="lang-en">9. Visitors & Outings</span>
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">9. 訪客與外出建議</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
                 <div class="accordion-content">
                      <div class="px-6 pt-4 pb-6">
-                         <!-- MODIFIED Tone -->
                          <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -768,10 +750,9 @@
                                  </span>
                             </li>
                         </ul>
-                         <!-- END MODIFICATION -->
                         <div class="mt-6">
                             <h4 class="font-semibold text-gray-800 mb-3 font-heading">
-                                <span class="lang-en">Visitor Reminders:</span> <!-- Tone softened -->
+                                <span class="lang-en">Visitor Reminders:</span>
                                 <span class="lang-zh">訪客提醒：</span>
                             </h4>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -790,7 +771,7 @@
                                 <div class="bg-teal-50 rounded-lg p-4 md:col-span-2">
                                     <p class="text-teal-700"><i class="fas fa-head-side-cough-slash mr-2"></i>
                                         <span class="lang-en">It's best to avoid kissing Lucas's face or hands. Please suggest postponing the visit if someone feels unwell.</span>
-                                        <span class="lang-zh">避免親吻Lucas的臉或手。如果有人感到不適，請建議延後探訪。</span>
+                                        <span class="lang-zh">最好避免親吻Lucas的臉或手。如果有人感到不適，請建議延後探訪。</span>
                                     </p>
                                 </div>
                             </div>
@@ -807,15 +788,14 @@
                             <i class="fas fa-first-aid text-orange-600 text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-800 font-heading">
-                            <span class="lang-en">10. When to Seek Help / Emergencies</span> <!-- Tone softened -->
-                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">10. 何時尋求協助 / 緊急情況</span> <!-- Tone softened -->
+                            <span class="lang-en">10. When to Seek Help / Emergencies</span>
+                            <span class="lang-zh block text-lg font-normal mt-1 text-gray-700">10. 何時尋求協助 / 緊急情況</span>
                         </h3>
                     </div>
                     <i class="fas fa-chevron-down accordion-icon text-gray-500 transition-transform"></i>
                 </button>
                  <div class="accordion-content">
                     <div class="px-6 pt-4 pb-6">
-                         <!-- MODIFIED Tone -->
                         <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
@@ -846,11 +826,10 @@
                                 </span>
                             </li>
                         </ul>
-                         <!-- END MODIFICATION -->
                          <div class="mt-6 bg-orange-50 rounded-lg p-4">
                             <h4 class="font-semibold text-orange-800 mb-2 font-heading">
                                 <i class="fas fa-exclamation-circle mr-2"></i>
-                                <span class="lang-en">Important Contact Info:</span> <!-- Tone softened -->
+                                <span class="lang-en">Important Contact Info:</span>
                                 <span class="lang-zh">重要聯絡資訊：</span>
                              </h4>
                              <p class="text-orange-700">
@@ -861,33 +840,47 @@
                     </div>
                 </div>
             </div>
+
+            <!-- End of Accordion Sections -->
         </div>
 
-        <!-- Quiz Link Button -->
+        <!-- Quiz and Game Links Section -->
         <div class="text-center mt-12 mb-8">
-            <a href="quiz.html" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-green-600 transition duration-300 text-lg font-heading">
-                <span class="lang-en">Take the Safety Quiz</span>
-                <span class="lang-zh block text-base mt-1">參加安全測驗</span>
-            </a>
+             <h3 class="text-xl font-semibold text-gray-700 mb-6 font-heading">
+                <span class="lang-en">Ready to Test Your Knowledge & Reflexes?</span>
+                <span class="lang-zh">準備好測試您的知識和反應了嗎？</span>
+             </h3>
+             <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+                 <!-- Quiz Button -->
+                <a href="quiz.html" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-green-600 transition duration-300 text-lg font-heading">
+                    <i class="fas fa-clipboard-list mr-2"></i>
+                    <span class="lang-en">Take the Safety Quiz</span>
+                    <span class="lang-zh block text-base mt-1">參加安全測驗</span>
+                </a>
+                 <!-- Game Button -->
+                <a href="game.html" class="inline-block bg-blue-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 text-lg font-heading">
+                    <i class="fas fa-gamepad mr-2"></i>
+                    <span class="lang-en">Play the Safety Game</span>
+                    <span class="lang-zh block text-base mt-1">玩安全遊戲</span>
+                </a>
+            </div>
         </div>
 
 
         <!-- Final Reminder -->
         <div class="bg-white rounded-xl shadow-md p-8 mt-8 text-center">
             <h2 class="text-2xl font-bold text-blue-800 mb-4 font-heading">
-                <span class="lang-en">A Final Thank You</span> <!-- Tone softened -->
-                <span class="lang-zh block text-xl mt-1 text-blue-700">最後再次感謝</span> <!-- Tone softened -->
+                <span class="lang-en">A Final Thank You</span>
+                <span class="lang-zh block text-xl mt-1 text-blue-700">最後再次感謝</span>
             </h2>
             <p class="text-gray-700 mb-6 max-w-3xl mx-auto">
-                <!-- MODIFIED Tone -->
                 <span class="lang-en">We truly appreciate your help in caring for Lucas! Following these guidelines helps everyone ensure his safety and well-being. Remember, if you're ever unsure about anything, please feel free to ask us first.</span>
                 <span class="lang-zh">我們衷心感謝您協助照顧Lucas！遵循這些守則有助於大家確保他的安全與健康。請記住，如果您對任何事情感到不確定，請隨時先詢問我們。</span>
-                <!-- END MODIFICATION -->
             </p>
             <div class="bg-white rounded-lg p-4 inline-block shadow-md border border-blue-100">
                 <p class="text-blue-600 font-semibold"><i class="fas fa-heart mr-2 text-red-500"></i>
-                    <span class="lang-en">Your careful attention makes a big difference in keeping Lucas safe and happy!</span> <!-- Tone softened -->
-                    <span class="lang-zh">您的細心關注對於保持Lucas的安全與快樂至關重要！</span> <!-- Tone softened -->
+                    <span class="lang-en">Your careful attention makes a big difference in keeping Lucas safe and happy!</span>
+                    <span class="lang-zh">您的細心關注對於保持Lucas的安全與快樂至關重要！</span>
                 </p>
             </div>
         </div>
@@ -918,10 +911,8 @@
             </div>
             <div class="border-t border-blue-700 mt-6 pt-6 text-center text-blue-200">
                 <p>
-                    <!-- MODIFIED Tone -->
                     <span class="lang-en">Last updated: April 2025 | For any questions, please feel free to contact the parents</span>
                     <span class="lang-zh block text-sm mt-1 text-blue-100">最後更新：2025年4月 | 如有任何疑問，請隨時聯絡父母</span>
-                    <!-- END MODIFICATION -->
                 </p>
             </div>
         </div>
@@ -940,7 +931,6 @@
             button.addEventListener('click', () => {
                 const accordion = button.closest('.accordion');
                 // Optional: Close other accordions when one opens
-                // This can prevent multiple long sections being open at once
                 document.querySelectorAll('.accordion.active').forEach(activeAccordion => {
                      if (activeAccordion !== accordion) {
                          activeAccordion.classList.remove('active');
@@ -952,7 +942,6 @@
 
         // Floating button click handler
         document.querySelector('.floating-btn button').addEventListener('click', () => {
-            // Slightly softer alert message
             alert("If you have any questions about these guidelines, please feel free to contact the baby's parents.\n\n如對守則有任何疑問，歡迎隨時聯絡寶寶的父母。");
         });
     </script>

@@ -18,7 +18,7 @@
         h1, h2, h3, h4, h5, h6, .font-heading {
             font-family: 'Nunito', sans-serif;
         }
-        .lang-zh { /* Keep for header/footer consistency */
+        .lang-zh {
             display: block;
             margin-top: 0.25rem;
             font-size: 0.95em;
@@ -27,25 +27,23 @@
              font-family: 'Inter', sans-serif;
         }
 
-        /* Responsive Game Container */
+        /* Responsive Game Container - 16:9 Aspect Ratio */
         .game-wrapper {
             position: relative;
             overflow: hidden;
             width: 100%;
-            max-width: 960px; /* Adjust as needed */
-            margin: 30px auto; /* Increased top margin */
-            padding-top: 56.2%; /* Adjust based on game aspect ratio (height / width * 100) */
-            background-color: #000;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 960px; /* Max width on desktop */
+            margin: 20px auto; /* Centered */
+            padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+            background-color: #000; /* Black background while loading */
+            border-radius: 0.375rem; /* Slightly rounded */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
         .game-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
-            bottom: 0;
-            right: 0;
             width: 100%;
             height: 100%;
             border: none;
@@ -53,38 +51,62 @@
 
         /* Styling for game info sections */
         .game-info-section {
-            max-width: 800px; /* Limit width for readability */
-            margin: 0 auto 2rem auto; /* Center and add bottom margin */
-            padding: 1rem;
-            background-color: #ffffff; /* White background for info */
-            border-radius: 0.5rem; /* Rounded corners */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto; /* Spacing */
+            padding: 1.25rem; /* More padding */
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .game-info-section h3 {
-            font-family: 'Nunito', sans-serif; /* Ensure heading font */
+            font-family: 'Nunito', sans-serif;
             color: #1d4ed8; /* blue-700 */
             margin-bottom: 0.75rem;
+            font-size: 1.5rem; /* Slightly larger */
         }
+         .game-info-section h4 { /* For sub-sections like Gameplay steps */
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            color: #1f2937; /* gray-800 */
+            margin-top: 0.75rem;
+            margin-bottom: 0.25rem;
+         }
         .game-info-section p, .game-info-section li {
             color: #374151; /* gray-700 */
             line-height: 1.6;
             margin-bottom: 0.5rem;
         }
-        .game-info-section ol {
-            list-style-type: decimal;
-            margin-left: 1.5rem;
+        .game-info-section ul {
+            list-style-type: none; /* Use icons instead */
+            padding-left: 0.5rem;
             margin-bottom: 1rem;
         }
-         .game-info-section ul {
-            list-style-type: disc;
-            margin-left: 1.5rem;
-             margin-bottom: 1rem;
-        }
+        .game-info-section li {
+             position: relative;
+             padding-left: 1.25rem; /* Space for icon */
+             margin-bottom: 0.3rem;
+         }
+        .game-info-section li::before {
+             content: '\f00c'; /* Font Awesome check icon */
+             font-family: 'Font Awesome 6 Free';
+             font-weight: 900;
+             color: #10b981; /* green-500 */
+             position: absolute;
+             left: 0;
+             top: 5px; /* Adjust vertical alignment */
+             font-size: 0.8em;
+         }
          .game-info-section strong {
              font-weight: 600;
              color: #1f2937; /* gray-800 */
          }
-
+         .game-screenshot {
+             display: block;
+             max-width: 80%; /* Adjust size */
+             margin: 1rem auto; /* Center */
+             border-radius: 0.375rem;
+             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+         }
 
     </style>
 </head>
@@ -123,42 +145,70 @@
 
         <!-- Game Introduction Section -->
         <div class="game-info-section">
-            <h3 class="text-2xl font-semibold">About The Game</h3>
+            <h3 class="text-2xl font-semibold">
+                <span class="lang-en">About The Game</span>
+                <span class="lang-zh">關於遊戲</span>
+            </h3>
             <p>
-                Uh oh! Little Lucas has just learned to crawl, and the whole house is his new playground! He's speedy, curious, and naturally drawn to interesting things... which aren't always safe.
+                <span class="lang-en">Uh oh! Little Lucas is crawling, and the house is his playground! He's fast, curious, and drawn to things that aren't always safe.</span>
+                <span class="lang-zh">噢噢！小Lucas正在學爬，整個家都是他的遊樂場！他速度快、好奇心強，而且容易被不一定安全的有趣事物吸引。</span>
             </p>
-            <p>
-                <strong>Lucas's Lookout</strong> is a fast-paced, reaction-based game where you take on the vital role of Lucas's caregiver. Your mission is to keep him safe from everyday household hazards as he explores different rooms. Can you keep up with his adventures?
+            <!-- Screenshot Placeholder -->
+            <img src="Game_Screenshot.jpg" alt="Lucas's Lookout Gameplay Screenshot" class="game-screenshot">
+            
+             <p>
+                <span class="lang-en">In <strong>Lucas's Lookout</strong>, you're the caregiver! Your mission: keep him safe from household hazards across different rooms. Can you keep up?</span>
+                <span class="lang-zh">在 <strong>Lucas's Lookout</strong> 中，您就是照顧者！您的任務是：在他探索不同房間時，保護他遠離家庭危險。您能跟上嗎？</span>
             </p>
         </div>
 
         <!-- Gameplay Section -->
         <div class="game-info-section">
-             <h3 class="text-2xl font-semibold">Gameplay</h3>
-             <p>The goal is simple but challenging: keep Lucas away from dangers!</p>
-             <ol>
-                <li><strong>Watch Lucas:</strong> He crawls automatically across the screen.</li>
-                <li><strong>Spot Hazards:</strong> Dangers appear in his path. Pay close attention!</li>
-                <li><strong>React Quickly:</strong> Identify the hazard type:
-                    <ul>
-                        <li><strong>Fixable Hazard?</strong> (Medication pill, coin, plastic bag, etc.) => <strong>Double TAP THE HAZARD</strong> itself to remove it.</li>
-                        <li><strong>Temporary Hazard?</strong> (Kitchen knife, clothes iron, etc.) => <strong>TAP LUCAS</strong> to distract him and make him change direction. (Watch out for the brief cooldown after tapping Lucas!)</li>
-                    </ul>
+             <h3 class="text-2xl font-semibold">
+                <span class="lang-en">How to Play</span>
+                <span class="lang-zh">遊戲玩法</span>
+             </h3>
+             <p>
+                <span class="lang-en">Keep Lucas safe for <strong>20 seconds</strong> per level!</span>
+                <span class="lang-zh">在每個關卡中保護Lucas安全 <strong>20 秒</strong>！</span>
+             </p>
+             <h4>
+                <span class="lang-en">1. Watch & Spot Hazards:</span>
+                <span class="lang-zh">1. 觀察並發現危險：</span>
+             </h4>
+             <p>
+                <span class="lang-en">Lucas crawls automatically. Dangers will appear in his path.</span>
+                <span class="lang-zh">Lucas會自動爬行。危險物品會出現在他的路徑上。</span>
+             </p>
+             <h4>
+                <span class="lang-en">2. React Quickly:</span>
+                 <span class="lang-zh">2. 快速反應：</span>
+             </h4>
+             <ul>
+                 <li>
+                    <span class="lang-en"><strong>Fixable Hazard?</strong> (Outlet, coin, etc.) => <strong>TAP the Hazard</strong> to remove it.</span>
+                    <span class="lang-zh"><strong>可移除的危險？</strong>（插座、硬幣等）=> <strong>點擊危險物</strong> 將其移除。</span>
                 </li>
-                <li><strong>Survive:</strong> Keep Lucas safe for <strong>20 seconds</strong> in each level to win!</li>
-             </ol>
+                 <li>
+                    <span class="lang-en"><strong>Temporary Hazard?</strong> (Knife, iron, etc.) => <strong>TAP LUCAS</strong> to change his direction (brief cooldown after tap!).</span>
+                    <span class="lang-zh"><strong>暫時性危險？</strong>（刀、熨斗等）=> <strong>點擊Lucas</strong> 改變他的方向（點擊後有短暫冷卻時間！）。</span>
+                </li>
+             </ul>
         </div>
 
         <!-- Features Section -->
         <div class="game-info-section">
-             <h3 class="text-2xl font-semibold">Features</h3>
+             <h3 class="text-2xl font-semibold">
+                <span class="lang-en">Game Features</span>
+                <span class="lang-zh">遊戲特色</span>
+            </h3>
              <ul>
-                <li><strong>5 Challenging Levels:</strong> Guide Lucas safely through the Living Room, Kitchen, Nursery, Hallway and Bathroom.</li>
-                <li><strong>Varied Hazards:</strong> Learn to handle both neutralizable and temporary dangers.</li>
-                <li><strong>Fast-Paced Action:</strong> Test your reflexes and observation skills.</li>
-                <li><strong>Increasing Difficulty!</strong></li>
-                <li><strong>Educational:</strong> Reinforces common baby safety awareness points in a fun way.</li>
-                <li><strong>Win Condition:</strong> Complete all 5 levels to win!</li>
+                <li><span class="lang-en">5 Challenging Levels (Living Room, Kitchen, Nursery, Hallway, Bathroom)</span><span class="lang-zh">5 個具挑戰性的關卡（客廳、廚房、嬰兒房、走廊、浴室）</span></li>
+                <li><span class="lang-en">Handle Fixable & Temporary Hazards</span><span class="lang-zh">應對可移除及暫時性的危險</span></li>
+                <li><span class="lang-en">Fast-Paced Reflex Gameplay</span><span class="lang-zh">快節奏反應遊戲玩法</span></li>
+                <li><span class="lang-en">Increasing Difficulty</span><span class="lang-zh">難度逐漸增加</span></li>
+                <li><span class="lang-en">Reinforces Baby Safety Awareness</span><span class="lang-zh">有趣地加強嬰兒安全意識</span></li>
+                <li><span class="lang-en">Complete All Levels to Win!</span><span class="lang-zh">完成所有關卡即可獲勝！</span></li>
              </ul>
         </div>
 
@@ -168,19 +218,34 @@
                     src="https://iced-lemontea.github.io/LucasLookout/" <!-- *** CONFIRM THIS is the correct deployed URL *** -->
                     frameborder="0"
                     scrolling="no"
-                    allowfullscreen>
+                    allow="fullscreen; screen-orientation" <!-- Added allow attributes -->
+                    >
              </iframe>
         </div>
 
-        <p class="text-center text-sm text-gray-500 mt-4">
-            <span class="lang-en">Loading game... Please ensure your browser supports WebGL. <i class="fas fa-expand ml-1"></i> for the best experience.</span>
-            <span class="lang-zh">遊戲載入中... 請確保您的瀏覽器支援 WebGL <i class="fas fa-expand ml-1"></i> 以獲得最佳體驗。</span>
+        <!-- Custom Fullscreen Button -->
+        <div class="text-center mt-4">
+             <button id="custom-fullscreen-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow transition duration-150 ease-in-out">
+                 <i class="fas fa-expand mr-2"></i>
+                 <span class="lang-en">Enter Fullscreen</span>
+                 <span class="lang-zh">進入全螢幕</span>
+             </button>
+            <p class="text-xs text-gray-500 mt-2">
+                <span class="lang-en">(May attempt to switch to landscape on mobile)</span>
+                <span class="lang-zh">（在手機上可能會嘗試切換到橫向模式）</span>
+            </p>
+        </div>
+
+
+        <p class="text-center text-sm text-gray-500 mt-6">
+            <span class="lang-en">Loading game... Please ensure your browser supports WebGL.</span>
+            <span class="lang-zh">遊戲載入中... 請確保您的瀏覽器支援 WebGL。</span>
         </p>
 
         <!-- Optional: Link to Quiz -->
          <div class="text-center mt-12 mb-8">
             <a href="quiz.html" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-green-600 transition duration-300 text-lg font-heading">
-                <i class="fas fa-clipboard-list mr-2"></i> <!-- Added Icon -->
+                <i class="fas fa-clipboard-list mr-2"></i>
                 <span class="lang-en">Take the Safety Quiz</span>
                 <span class="lang-zh block text-base mt-1">參加安全測驗</span>
             </a>
@@ -209,6 +274,77 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const fullscreenButton = document.getElementById('custom-fullscreen-btn');
+        const gameIframe = document.getElementById('unity-game-frame');
+
+        if (fullscreenButton && gameIframe) {
+            fullscreenButton.addEventListener('click', () => {
+                // --- Request Fullscreen ---
+                if (gameIframe.requestFullscreen) {
+                    gameIframe.requestFullscreen();
+                } else if (gameIframe.webkitRequestFullscreen) { /* Safari */
+                    gameIframe.webkitRequestFullscreen();
+                } else if (gameIframe.msRequestFullscreen) { /* IE11 */
+                    gameIframe.msRequestFullscreen();
+                }
+
+                // --- Attempt to Lock Orientation (Best effort) ---
+                // Check if screen.orientation and lock are available
+                if (screen.orientation && typeof screen.orientation.lock === 'function') {
+                    screen.orientation.lock('landscape').then(() => {
+                        console.log('Orientation locked to landscape.');
+                    }).catch((error) => {
+                        // Log error, but don't alert the user as it might be denied by settings
+                        console.warn('Could not lock orientation:', error);
+                    });
+                } else {
+                     console.warn('Screen Orientation API not fully supported.');
+                }
+            });
+
+            // Optional: Update button text when exiting fullscreen
+            document.addEventListener('fullscreenchange', () => {
+                const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+                const buttonTextEn = fullscreenButton.querySelector('.lang-en');
+                const buttonTextZh = fullscreenButton.querySelector('.lang-zh');
+
+                if (fullscreenElement === gameIframe) {
+                    if(buttonTextEn) buttonTextEn.textContent = "Exit Fullscreen";
+                    if(buttonTextZh) buttonTextZh.textContent = "退出全螢幕";
+                } else {
+                    if(buttonTextEn) buttonTextEn.textContent = "Enter Fullscreen";
+                    if(buttonTextZh) buttonTextZh.textContent = "進入全螢幕";
+                    // Optionally try to unlock orientation when exiting fullscreen
+                    if (screen.orientation && typeof screen.orientation.unlock === 'function') {
+                        screen.orientation.unlock();
+                    }
+                }
+            });
+             // Handle Safari's specific event
+             document.addEventListener('webkitfullscreenchange', () => {
+                 // Call the same logic as fullscreenchange
+                  const fullscreenElement = document.webkitFullscreenElement;
+                  const buttonTextEn = fullscreenButton.querySelector('.lang-en');
+                  const buttonTextZh = fullscreenButton.querySelector('.lang-zh');
+                  if (fullscreenElement === gameIframe) {
+                    if(buttonTextEn) buttonTextEn.textContent = "Exit Fullscreen";
+                    if(buttonTextZh) buttonTextZh.textContent = "退出全螢幕";
+                  } else {
+                    if(buttonTextEn) buttonTextEn.textContent = "Enter Fullscreen";
+                    if(buttonTextZh) buttonTextZh.textContent = "進入全螢幕";
+                    if (screen.orientation && typeof screen.orientation.unlock === 'function') {
+                         screen.orientation.unlock();
+                     }
+                  }
+             });
+
+        } else {
+            console.error("Could not find the fullscreen button or game iframe element.");
+        }
+
+    </script>
 
 </body>
 </html>

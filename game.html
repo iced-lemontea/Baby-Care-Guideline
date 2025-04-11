@@ -104,7 +104,7 @@
 
         /* Styling for Screenshots Section */
         .screenshots-section {
-            max-width: 1600px;
+            max-width: 800px;
             margin: 0 auto 2rem auto;
             padding: 1.5rem;
             background-color: #f9fafb; /* Light gray background */
@@ -176,22 +176,6 @@
             <span class="lang-zh block text-2xl mt-1 text-blue-700">Lucas's Lookout!</span>
         </h2>
 
-        <!-- *** ADDED SCREENSHOTS SECTION *** -->
-        <div class="screenshots-section">
-            <h3 class="text-2xl font-semibold">
-                <span class="lang-en">Screenshots</span>
-                <span class="lang-zh">遊戲截圖</span>
-            </h3>
-            <div class="screenshots-container">
-                <!-- Add your screenshot images here -->
-                <!-- Replace "#" with the actual path to your images -->
-                <img src="Game_Screenshot.jpg" alt="Lucas crawling in the living room avoiding an outlet">
-
-                <!-- Add more images as needed -->
-            </div>
-        </div>
-        <!-- *** END SCREENSHOTS SECTION *** -->
-
         <!-- Game Introduction Section -->
         <div class="game-info-section">
             <h3 class="text-2xl font-semibold">
@@ -232,12 +216,12 @@
                     <span class="lang-zh"><strong>快速反應：</strong>辨識危險類型：</span>
                     <ul>
                         <li>
-                            <span class="lang-en"><strong>Fixable Hazard?</strong> (Electricity Outlet, coin, plastic bag, etc.) => <strong>TAP THE HAZARD</strong> itself to remove it.</span>
-                            <span class="lang-zh"><strong>可修復的危險？</strong>（電源插座、硬幣、塑膠袋等）=> **快速點擊一下危險物品本身** 以移除它。</span>
+                            <span class="lang-en"><strong>Fixable Hazard?</strong> (Electricity Outlet, coin, plastic bag, etc.) => <strong>Double TAP THE HAZARD</strong> itself to remove it.</span>
+                            <span class="lang-zh"><strong>可修復的危險？</strong>（電源插座、硬幣、塑膠袋等）=> **快速點擊兩下危險物品本身** 以移除它。</span>
                         </li>
                         <li>
                             <span class="lang-en"><strong>Temporary Hazard?</strong> (Kitchen knife, clothes iron, etc.) => <strong>TAP LUCAS</strong> to distract him and make him change direction. (Watch out for the brief cooldown after tapping Lucas!)</span>
-                            <span class="lang-zh"><strong>暫時性危險？</strong>（刀、熨斗等）=> **點擊 Lucas** 來分散他的注意力，讓他改變方向。（注意點擊 Lucas 後會有短暫的冷卻時間！）</span>
+                            <span class="lang-zh"><strong>暫時性危險？</strong>（菜刀、熨斗等）=> **點擊 Lucas** 來分散他的注意力，讓他改變方向。（注意點擊 Lucas 後會有短暫的冷卻時間！）</span>
                         </li>
                     </ul>
                 </li>
@@ -282,7 +266,21 @@
             </ul>
         </div>
 
+        <!-- *** ADDED SCREENSHOTS SECTION *** -->
+        <div class="screenshots-section">
+            <h3 class="text-2xl font-semibold">
+                <span class="lang-en">Screenshots</span>
+                <span class="lang-zh">遊戲截圖</span>
+            </h3>
+            <div class="screenshots-container">
+                <!-- Add your screenshot images here -->
+                <!-- Replace "#" with the actual path to your images -->
+                <img src="Game_Screenshot.jpg" alt="Lucas crawling in the living room avoiding an outlet">
 
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+        <!-- *** END SCREENSHOTS SECTION *** -->
         <!-- Responsive Game Container -->
         <div class="game-wrapper">
             <iframe id="unity-game-frame"
